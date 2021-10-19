@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="redefinirSenha.aspx.cs" Inherits="prjMyLessonsAPI.lib.redefinirSenha" %>

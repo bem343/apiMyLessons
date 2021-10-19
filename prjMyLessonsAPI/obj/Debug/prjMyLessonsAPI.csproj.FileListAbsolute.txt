@@ -1,0 +1,10 @@
+D:\OneDrive\Área de Trabalho\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.dll
+D:\OneDrive\Área de Trabalho\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.pdb
+D:\OneDrive\Área de Trabalho\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csprojResolveAssemblyReference.cache
+D:\OneDrive\Área de Trabalho\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.dll
+D:\OneDrive\Área de Trabalho\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.pdb
+D:\OneDrive\Documentos\ENSINO MÉDIO\TCC\API\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.dll
+D:\OneDrive\Documentos\ENSINO MÉDIO\TCC\API\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.pdb
+D:\OneDrive\Documentos\ENSINO MÉDIO\TCC\API\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csprojResolveAssemblyReference.cache
+D:\OneDrive\Documentos\ENSINO MÉDIO\TCC\API\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.dll
+D:\OneDrive\Documentos\ENSINO MÉDIO\TCC\API\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.pdb

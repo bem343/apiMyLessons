@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gerarCodigo.aspx.cs" Inherits="prjMyLessonsAPI.lib.gerarCodigo" %>
