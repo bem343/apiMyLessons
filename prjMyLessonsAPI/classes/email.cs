@@ -9,12 +9,16 @@ using System.Net;
 namespace prjMyLessonsAPI.classes
 {
     //email.mandarCodigo(aluno.email, aluno.nome, codigo.ToString())
-    static public class email
+    public static class email
     {
-        static public bool mandarCodigo( string destinatario, string nome, string codigo )
+
+        public static string remetente = "mylessonstcc@gmail.com";
+        public static string senha = "h&*6@G7gy7d8he92o2fj";
+
+        public static bool mandarCodigo( string destinatario, string nome, string codigo )
         {
             MailMessage mensagem = new MailMessage(
-                new MailAddress("correaazevedojoao@gmail.com", "MyLessons", Encoding.GetEncoding("UTF-8")),
+                new MailAddress(remetente, "MyLessons", Encoding.GetEncoding("UTF-8")),
                 new MailAddress(destinatario)
             );
             mensagem.Subject = "Mylessons - redefinição de senha";
@@ -27,7 +31,7 @@ namespace prjMyLessonsAPI.classes
             smtpClient.UseDefaultCredentials = false;
 
             //COLOCAR A SENHA QUANDO FOR TESTAR
-            smtpClient.Credentials = new NetworkCredential("correaazevedojoao@gmail.com", "Camicase02");
+            smtpClient.Credentials = new NetworkCredential(remetente, senha);
             smtpClient.EnableSsl = true;
             try { smtpClient.Send(mensagem); } catch { return false; } 
             return true;
