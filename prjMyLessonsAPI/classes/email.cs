@@ -12,8 +12,8 @@ namespace prjMyLessonsAPI.classes
     public static class email
     {
 
-        public static string remetente = "mylessonstcc@gmail.com";
-        public static string senha = "h&*6@G7gy7d8he92o2fj";
+        private static string remetente = "mylessonstcc@gmail.com";
+        private static string senha = "h&*6@G7gy7d8he92o2fj";
 
         public static bool mandarCodigo( string destinatario, string nome, string codigo )
         {

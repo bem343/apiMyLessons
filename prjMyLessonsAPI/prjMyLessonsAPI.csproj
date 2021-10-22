@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dlls\MySql.Data.dll" />
+    <Content Include="lib\buscarDadosAluno.aspx" />
     <Content Include="lib\gerarCodigo.aspx" />
     <Content Include="lib\redefinirSenha.aspx" />
     <Content Include="lib\verificarAluno.aspx" />
@@ -68,9 +69,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\aluno.cs" />
+    <Compile Include="classes\avatar.cs" />
     <Compile Include="classes\banco.cs" />
     <Compile Include="classes\email.cs" />
     <Compile Include="classes\execucao.cs" />
+    <Compile Include="classes\tema.cs" />
+    <Compile Include="classes\turma.cs" />
+    <Compile Include="lib\buscarDadosAluno.aspx.cs">
+      <DependentUpon>buscarDadosAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\buscarDadosAluno.aspx.designer.cs">
+      <DependentUpon>buscarDadosAluno.aspx</DependentUpon>
+    </Compile>
     <Compile Include="lib\gerarCodigo.aspx.cs">
       <DependentUpon>gerarCodigo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -14,6 +14,14 @@ namespace prjMyLessonsAPI.classes
             private string senha { get; set; }
             public string email { get; private set; }
             public string nome { get; set; }
+            public int qtEsmeraldas { get; set; }
+            public int nivel { get; set; }
+            public double qtExperiencia { get; set; }
+
+            public tema temaSelecionado { get; set; }
+            public avatar avatarSelecionado { get; set; }
+
+            public turma turmaAtual { get; set; }
         #endregion
 
         #region Construtores
@@ -102,5 +110,41 @@ namespace prjMyLessonsAPI.classes
                 return Executar(nomeSP, parametros);
             }
         #endregion
+
+        #region Busca os dados do aluno
+            public bool dados()
+            {
+                MySqlDataReader dados = null;
+                string nomeSP = "BuscarDadosAluno";
+                string[,] parametros = new string[1,2];
+                parametros[0, 0] = "VRm";
+                parametros[0, 1] = rm.ToString();
+                if(Selecionar(nomeSP, parametros, ref dados))
+                {
+                    if (dados != null)
+                    {
+                        if (dados.HasRows)
+                        {
+                            while (dados.Read())
+                            {
+                                nome = dados["nm_aluno"].ToString();
+                                qtEsmeraldas = int.Parse(dados["qt_esmeralda"].ToString());
+                                string tema = dados["cd_tema"].ToString();
+                                string avatar = dados["cd_avatar"].ToString();
+                                temaSelecionado = new tema(int.Parse(tema));
+                                avatarSelecionado = new avatar(int.Parse(avatar));
+                            }
+                            fechaDados(dados);
+                            fechaConexao();
+                            return true;
+                        }
+                    }
+                }
+                fechaDados(dados);
+                fechaConexao();
+                return false;
+            }
+        #endregion
+
     }
 }
