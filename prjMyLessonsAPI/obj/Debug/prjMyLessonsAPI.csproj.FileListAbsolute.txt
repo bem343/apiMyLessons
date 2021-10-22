@@ -8,3 +8,11 @@ D:\OneDrive\Documentos\ENSINO MÉDIO\TCC\API\prjMyLessonsAPI\prjMyLessonsAPI\bin
 D:\OneDrive\Documentos\ENSINO MÉDIO\TCC\API\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csprojResolveAssemblyReference.cache
 D:\OneDrive\Documentos\ENSINO MÉDIO\TCC\API\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.dll
 D:\OneDrive\Documentos\ENSINO MÉDIO\TCC\API\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.pdb
+C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyLessonsAPI\bin\prjMyLessonsAPI.dll
+C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyLessonsAPI\bin\prjMyLessonsAPI.pdb
+C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyLessonsAPI\bin\MySql.Data.dll
+C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csprojAssemblyReference.cache
+C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csproj.CoreCompileInputs.cache
+C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csproj.CopyComplete
+C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.dll
+C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.pdb

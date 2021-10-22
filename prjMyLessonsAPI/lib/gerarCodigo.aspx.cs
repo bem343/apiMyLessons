@@ -12,6 +12,7 @@ namespace prjMyLessonsAPI.lib
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             string json = "[]";
 
             #region Faz as requisições e valida-as
