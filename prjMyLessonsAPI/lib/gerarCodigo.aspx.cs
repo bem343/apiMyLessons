@@ -34,7 +34,7 @@ namespace prjMyLessonsAPI.lib
                 if (aluno.pegaEmail())
                 {
                     int codigo = new Random().Next(100000, 999999);
-                    if(email.mandarCodigo(aluno.email, aluno.nome, codigo.ToString()))
+                    if(email.mandarCodigo(aluno.email, aluno.nome, codigo))
                     {
                         json = "[{'codigo' : '" + codigo + "'}]";
                     }
