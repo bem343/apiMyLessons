@@ -15,17 +15,18 @@ namespace prjMyLessonsAPI.lib
             string json = "[]";
 
             #region Faz as requisições e valida-as
-                if (Request["R"] == null)
+                Response.ContentType = "application/json";
+                if (Request["rm"] == null)
                 {
                     Response.Write(json);
                     return;
                 }
-                if (Request["R"].ToString() == "")
+                if (Request["rm"].ToString() == "")
                 {
                     Response.Write(json);
                     return;
                 }
-                string rm = Request["R"].ToString();
+                string rm = Request["rm"].ToString();
             #endregion
 
             #region Pega o email e manda o código pra ele

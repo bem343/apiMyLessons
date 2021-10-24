@@ -15,18 +15,19 @@ namespace prjMyLessonsAPI.lib
             string json = "[]";
 
             #region Faz as requisições e valida-as
-                if (Request["R"] == null | Request["S"] == null)
+                Response.ContentType = "application/json";
+                if (Request["rm"] == null | Request["senha"] == null)
                 {
                     Response.Write(json);
                     return;
                 }
-                if (Request["R"].ToString() == "" | Request["S"].ToString() == "")
+                if (Request["rm"].ToString() == "" | Request["senha"].ToString() == "")
                 {
                     Response.Write(json);
                     return;
                 }
-                string rm = Request["R"].ToString();
-                string senha = Request["S"].ToString();
+                string rm = Request["rm"].ToString();
+                string senha = Request["senha"].ToString();
             #endregion
 
             #region Redefine a senha do aluno

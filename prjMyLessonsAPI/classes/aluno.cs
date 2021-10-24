@@ -10,7 +10,7 @@ namespace prjMyLessonsAPI.classes
     {
 
         #region propriedades
-            private int rm { get; set; }
+            public int rm { get; private set; }
             private string senha { get; set; }
             public string email { get; private set; }
             public string nome { get; set; }

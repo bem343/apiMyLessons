@@ -13,6 +13,13 @@
     <RootNamespace>prjMyLessonsAPI</RootNamespace>
     <AssemblyName>prjMyLessonsAPI</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,6 +63,7 @@
   <ItemGroup>
     <Content Include="dlls\MySql.Data.dll" />
     <Content Include="lib\buscarDadosAluno.aspx" />
+    <Content Include="lib\buscarTarefasPendentes.aspx" />
     <Content Include="lib\gerarCodigo.aspx" />
     <Content Include="lib\redefinirSenha.aspx" />
     <Content Include="lib\verificarAluno.aspx" />
@@ -71,8 +79,13 @@
     <Compile Include="classes\aluno.cs" />
     <Compile Include="classes\avatar.cs" />
     <Compile Include="classes\banco.cs" />
+    <Compile Include="classes\disciplina.cs" />
     <Compile Include="classes\email.cs" />
     <Compile Include="classes\execucao.cs" />
+    <Compile Include="classes\listaTarefaAluno.cs" />
+    <Compile Include="classes\professor.cs" />
+    <Compile Include="classes\tarefa.cs" />
+    <Compile Include="classes\tarefaAluno.cs" />
     <Compile Include="classes\tema.cs" />
     <Compile Include="classes\turma.cs" />
     <Compile Include="lib\buscarDadosAluno.aspx.cs">
@@ -81,6 +94,13 @@
     </Compile>
     <Compile Include="lib\buscarDadosAluno.aspx.designer.cs">
       <DependentUpon>buscarDadosAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\buscarTarefasPendentes.aspx.cs">
+      <DependentUpon>buscarTarefasPendentes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\buscarTarefasPendentes.aspx.designer.cs">
+      <DependentUpon>buscarTarefasPendentes.aspx</DependentUpon>
     </Compile>
     <Compile Include="lib\gerarCodigo.aspx.cs">
       <DependentUpon>gerarCodigo.aspx</DependentUpon>
