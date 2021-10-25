@@ -63,6 +63,7 @@
   <ItemGroup>
     <Content Include="dlls\MySql.Data.dll" />
     <Content Include="lib\buscarDadosAluno.aspx" />
+    <Content Include="lib\buscarTarefasConcluidas.aspx" />
     <Content Include="lib\buscarTarefasPendentes.aspx" />
     <Content Include="lib\gerarCodigo.aspx" />
     <Content Include="lib\redefinirSenha.aspx" />
@@ -94,6 +95,13 @@
     </Compile>
     <Compile Include="lib\buscarDadosAluno.aspx.designer.cs">
       <DependentUpon>buscarDadosAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\buscarTarefasConcluidas.aspx.cs">
+      <DependentUpon>buscarTarefasConcluidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\buscarTarefasConcluidas.aspx.designer.cs">
+      <DependentUpon>buscarTarefasConcluidas.aspx</DependentUpon>
     </Compile>
     <Compile Include="lib\buscarTarefasPendentes.aspx.cs">
       <DependentUpon>buscarTarefasPendentes.aspx</DependentUpon>

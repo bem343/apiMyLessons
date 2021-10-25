@@ -37,7 +37,7 @@ namespace prjMyLessonsAPI.classes
         #endregion
 
         #region Manda um email com título e conteúdo personalizado
-            public static bool mandarCodigo(string destinatario, string subject, string html)
+            public static bool personalizado(string destinatario, string subject, string html)
             {
                 MailMessage mensagem = new MailMessage(
                     new MailAddress(remetente, "MyLessons", Encoding.GetEncoding("UTF-8")),

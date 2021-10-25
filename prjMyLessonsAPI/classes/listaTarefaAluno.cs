@@ -20,7 +20,7 @@ namespace prjMyLessonsAPI.classes
         #endregion
 
         #region Traz as tarefas Pendentes do aluno
-            public List<tarefaAluno> listar()
+            public List<tarefaAluno> listarPendentes()
             {
                 MySqlDataReader dados = null;
                 string nomeSP = "tarefasPendentesAluno";
@@ -59,5 +59,43 @@ namespace prjMyLessonsAPI.classes
                 return tarefas;
             }
         #endregion
+
+        #region Traz as tarefas Concluídas do aluno
+            public List<tarefaAluno> listarConcluidas()
+            {
+                MySqlDataReader dados = null;
+                string nomeSP = "tarefasConcluidasAluno";
+                string[,] parametros = new string[1, 2];
+                parametros[0, 0] = "VRm";
+                parametros[0, 1] = rm;
+                if (Selecionar(nomeSP, parametros, ref dados))
+                {
+                    if (dados != null)
+                    {
+                        if (dados.HasRows)
+                        {
+                            while (dados.Read())
+                            {
+                                string codigoTarefa = dados["cd_tarefa"].ToString();
+                                string titulo = dados["nm_titulo_tarefa"].ToString();
+                                string descricao = dados["ds_tarefa"].ToString();
+                                tarefa tarefa = new tarefa(int.Parse(codigoTarefa), titulo, descricao);
+
+                                string dtEntrega = dados["dt_entrega"].ToString();
+                                string hrEntrega = dados["hr_entrega"].ToString();
+                                DateTime dtE = DateTime.Parse(dtEntrega);
+                                DateTime hrE = DateTime.Parse(hrEntrega);
+                                tarefaAluno tarefaAluno = new tarefaAluno(tarefa, dtE, hrE);
+                                tarefas.Add(tarefaAluno);
+                            }
+                        }
+                    }
+                }
+                fechaDados(dados);
+                fechaConexao();
+                return tarefas;
+            }
+        #endregion
+
     }
 }

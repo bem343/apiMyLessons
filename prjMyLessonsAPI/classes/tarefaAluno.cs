@@ -33,6 +33,12 @@ namespace prjMyLessonsAPI.classes
                 this.dtFim = dtFim;
                 this.hrFim = hrFim;
             }
+            public tarefaAluno(tarefa tarefa, DateTime dtEntrega, DateTime hrEntrega)
+            {
+                this.tarefa = tarefa;
+                this.dtEntrega = dtEntrega;
+                this.hrEntrega = hrEntrega;
+            }
         #endregion
 
     }

@@ -8,7 +8,7 @@ using prjMyLessonsAPI.classes;
 
 namespace prjMyLessonsAPI.lib
 {
-    public partial class buscarTarefasPendentes : System.Web.UI.Page
+    public partial class buscarTarefasConcluidas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,17 +32,15 @@ namespace prjMyLessonsAPI.lib
             #region Busca os dados do aluno
                 listaTarefaAluno tarefas = new listaTarefaAluno(rm);
                 json = "[ ";
-                foreach (var item in tarefas.listarPendentes())
+                foreach (var item in tarefas.listarConcluidas())
                 {
                     json += "{'codigo':'" + item.tarefa.codigo + "', ";
                     json += "'titulo':'" + item.tarefa.titulo + "', ";
                     json += "'descricao':'" + item.tarefa.descricao + "', ";
-                    json += "'dtInicio':'" + item.dtInicio.ToShortDateString() + "', ";
-                    json += "'hrInicio':'" + formataHora(item.hrInicio) +"', ";
-                    json += "'dtFim':'" + item.dtFim.ToShortDateString() + "', ";
-                    json += "'hrFim':'" + formataHora(item.hrFim) + "'},";
+                    json += "'dtEntrega':'" + item.dtEntrega.ToShortDateString() + "', ";
+                    json += "'hrEntrega':'" + formataHora(item.hrEntrega) + "'},";
                 }
-                json = json.Substring(0,json.Length-1);
+                json = json.Substring(0, json.Length - 1);
                 json = json.Replace("'", "\"");
                 json += "]";
                 Response.Write(json);
@@ -62,6 +60,5 @@ namespace prjMyLessonsAPI.lib
                 return h + ":" + m + ":" + s;
             }
         #endregion
-
     }
 }
