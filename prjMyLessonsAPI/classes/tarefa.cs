@@ -25,6 +25,10 @@ namespace prjMyLessonsAPI.classes
                 this.titulo = titulo;
                 this.descricao = descricao;
             }
+            public tarefa(int codigo)
+            {
+                this.codigo = codigo;
+            }
         #endregion
 
     }

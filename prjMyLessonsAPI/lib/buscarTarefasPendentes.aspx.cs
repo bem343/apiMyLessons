@@ -38,9 +38,9 @@ namespace prjMyLessonsAPI.lib
                     json += "'titulo':'" + item.tarefa.titulo + "', ";
                     json += "'descricao':'" + item.tarefa.descricao + "', ";
                     json += "'dtInicio':'" + item.dtInicio.ToShortDateString() + "', ";
-                    json += "'hrInicio':'" + formataHora(item.hrInicio) +"', ";
+                    json += "'hrInicio':'" + formatacao.hrDuasCasas(item.hrInicio) +"', ";
                     json += "'dtFim':'" + item.dtFim.ToShortDateString() + "', ";
-                    json += "'hrFim':'" + formataHora(item.hrFim) + "'},";
+                    json += "'hrFim':'" + formatacao.hrDuasCasas(item.hrFim) + "'},";
                 }
                 json = json.Substring(0,json.Length-1);
                 json = json.Replace("'", "\"");
@@ -49,19 +49,5 @@ namespace prjMyLessonsAPI.lib
                 return;
             #endregion
         }
-
-        #region Formatação da hora
-            private string formataHora(DateTime hora)
-            {
-                string h = hora.Hour.ToString();
-                if (h.Length == 1) { h = "0" + h; }
-                string m = hora.Minute.ToString();
-                if (m.Length == 1) { m = "0" + m; }
-                string s = hora.Second.ToString();
-                if (s.Length == 1) { s = "0" + s; }
-                return h + ":" + m + ":" + s;
-            }
-        #endregion
-
     }
 }

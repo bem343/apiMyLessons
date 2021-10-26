@@ -39,6 +39,25 @@ namespace prjMyLessonsAPI.classes
                 this.dtEntrega = dtEntrega;
                 this.hrEntrega = hrEntrega;
             }
+            public tarefaAluno(tarefa tarefa, aluno aluno)
+            {
+                this.tarefa = tarefa;
+                this.aluno = aluno;
+            }
+        #endregion
+
+        #region Entregar Tarefa A partir do rm do aluno e código da tarefa
+            public bool entregar()
+            {
+                string nomeSP = "EntregaTarefaAluno";
+                string[,] parametros = new string[2, 2];
+                parametros[0, 0] = "VRm";
+                parametros[0, 1] = aluno.rm.ToString();
+                parametros[1, 0] = "vTarefa";
+                parametros[1, 1] = tarefa.codigo.ToString();
+
+                return Executar(nomeSP, parametros);
+            }
         #endregion
 
     }

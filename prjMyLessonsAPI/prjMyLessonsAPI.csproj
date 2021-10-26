@@ -65,6 +65,7 @@
     <Content Include="lib\buscarDadosAluno.aspx" />
     <Content Include="lib\buscarTarefasConcluidas.aspx" />
     <Content Include="lib\buscarTarefasPendentes.aspx" />
+    <Content Include="lib\entregarTarefa.aspx" />
     <Content Include="lib\gerarCodigo.aspx" />
     <Content Include="lib\redefinirSenha.aspx" />
     <Content Include="lib\verificarAluno.aspx" />
@@ -83,6 +84,7 @@
     <Compile Include="classes\disciplina.cs" />
     <Compile Include="classes\email.cs" />
     <Compile Include="classes\execucao.cs" />
+    <Compile Include="classes\formatacao.cs" />
     <Compile Include="classes\listaTarefaAluno.cs" />
     <Compile Include="classes\professor.cs" />
     <Compile Include="classes\tarefa.cs" />
@@ -109,6 +111,13 @@
     </Compile>
     <Compile Include="lib\buscarTarefasPendentes.aspx.designer.cs">
       <DependentUpon>buscarTarefasPendentes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\entregarTarefa.aspx.cs">
+      <DependentUpon>entregarTarefa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\entregarTarefa.aspx.designer.cs">
+      <DependentUpon>entregarTarefa.aspx</DependentUpon>
     </Compile>
     <Compile Include="lib\gerarCodigo.aspx.cs">
       <DependentUpon>gerarCodigo.aspx</DependentUpon>
