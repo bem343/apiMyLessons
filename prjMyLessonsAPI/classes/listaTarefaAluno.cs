@@ -13,7 +13,7 @@ namespace prjMyLessonsAPI.classes
         private List<tarefaAluno> tarefas = new List<tarefaAluno>();
 
         #region Construtores
-            public listaTarefaAluno(string rm)
+            public listaTarefaAluno(string rm) : base()
             {
                 this.rm = rm;
             }

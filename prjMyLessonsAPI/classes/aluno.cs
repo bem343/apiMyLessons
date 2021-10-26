@@ -15,8 +15,8 @@ namespace prjMyLessonsAPI.classes
             public string email { get; private set; }
             public string nome { get; set; }
             public int qtEsmeraldas { get; set; }
-            public int nivel { get; set; }
-            public double qtExperiencia { get; set; }
+            public double nivel { get; set; }
+            public int qtExperiencia { get; set; }
 
             public tema temaSelecionado { get; set; }
             public avatar avatarSelecionado { get; set; }
@@ -25,7 +25,7 @@ namespace prjMyLessonsAPI.classes
         #endregion
 
         #region Construtores
-        public aluno(int rm): base()
+            public aluno(int rm): base()
             {
                 this.rm = rm;
             }
@@ -146,5 +146,19 @@ namespace prjMyLessonsAPI.classes
             }
         #endregion
 
+        #region Atualiza as quantidades de esmeralda e experência
+            public bool atualizarXpEsmeraldas(int experiencia, int esmeralda)
+            {
+                string nomeSP = "AtualizarXpEsmeraldaAluno";
+                string[,] parametros = new string[3, 2];
+                parametros[0, 0] = "VRm";
+                parametros[0, 1] = rm.ToString();
+                parametros[1, 0] = "vXp";
+                parametros[1, 1] = experiencia.ToString();
+                parametros[2, 0] = "vEsmeralda";
+                parametros[2, 1] = esmeralda.ToString();
+                return Executar(nomeSP, parametros);
+            }
+        #endregion
     }
 }

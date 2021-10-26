@@ -25,7 +25,7 @@ namespace prjMyLessonsAPI.classes
         #endregion
 
         #region Construtores
-            public tarefaAluno(tarefa tarefa, DateTime dtInicio, DateTime hrInicio, DateTime dtFim, DateTime hrFim)
+            public tarefaAluno(tarefa tarefa, DateTime dtInicio, DateTime hrInicio, DateTime dtFim, DateTime hrFim) : base()
             {
                 this.tarefa = tarefa;
                 this.dtInicio = dtInicio;
@@ -33,13 +33,13 @@ namespace prjMyLessonsAPI.classes
                 this.dtFim = dtFim;
                 this.hrFim = hrFim;
             }
-            public tarefaAluno(tarefa tarefa, DateTime dtEntrega, DateTime hrEntrega)
+            public tarefaAluno(tarefa tarefa, DateTime dtEntrega, DateTime hrEntrega) : base()
             {
                 this.tarefa = tarefa;
                 this.dtEntrega = dtEntrega;
                 this.hrEntrega = hrEntrega;
             }
-            public tarefaAluno(tarefa tarefa, aluno aluno)
+            public tarefaAluno(tarefa tarefa, aluno aluno) : base()
             {
                 this.tarefa = tarefa;
                 this.aluno = aluno;
@@ -47,7 +47,7 @@ namespace prjMyLessonsAPI.classes
         #endregion
 
         #region Entregar Tarefa A partir do rm do aluno e código da tarefa
-            public bool entregar()
+            public bool entregar(int experiencia, int esmeralda)
             {
                 string nomeSP = "EntregaTarefaAluno";
                 string[,] parametros = new string[2, 2];
@@ -55,8 +55,13 @@ namespace prjMyLessonsAPI.classes
                 parametros[0, 1] = aluno.rm.ToString();
                 parametros[1, 0] = "vTarefa";
                 parametros[1, 1] = tarefa.codigo.ToString();
-
-                return Executar(nomeSP, parametros);
+                bool atualizacao = aluno.atualizarXpEsmeraldas(experiencia, esmeralda);
+                bool entrega = Executar(nomeSP, parametros);
+                if (atualizacao && entrega)
+                {
+                    return true;
+                }
+                return false;
             }
         #endregion
 
