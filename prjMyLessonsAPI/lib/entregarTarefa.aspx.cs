@@ -32,7 +32,7 @@ namespace prjMyLessonsAPI.lib
                 string esmeralda = Request["esm"].ToString();
             #endregion
 
-            #region Busca os dados do aluno
+            #region Entrega uma tarefa
                 aluno aluno = new aluno(int.Parse(rm));
                 tarefa tarefa = new tarefa(int.Parse(cdTarefa));
                 tarefaAluno tarefaAluno = new tarefaAluno(tarefa, aluno);

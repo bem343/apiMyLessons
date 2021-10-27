@@ -63,6 +63,8 @@
   <ItemGroup>
     <Content Include="dlls\MySql.Data.dll" />
     <Content Include="lib\buscarDadosAluno.aspx" />
+    <Content Include="lib\buscarPremios.aspx" />
+    <Content Include="lib\buscarPremiosResgatados.aspx" />
     <Content Include="lib\buscarTarefasConcluidas.aspx" />
     <Content Include="lib\buscarTarefasPendentes.aspx" />
     <Content Include="lib\entregarTarefa.aspx" />
@@ -86,6 +88,8 @@
     <Compile Include="classes\execucao.cs" />
     <Compile Include="classes\formatacao.cs" />
     <Compile Include="classes\listaTarefaAluno.cs" />
+    <Compile Include="classes\premio.cs" />
+    <Compile Include="classes\premioAluno.cs" />
     <Compile Include="classes\professor.cs" />
     <Compile Include="classes\tarefa.cs" />
     <Compile Include="classes\tarefaAluno.cs" />
@@ -97,6 +101,20 @@
     </Compile>
     <Compile Include="lib\buscarDadosAluno.aspx.designer.cs">
       <DependentUpon>buscarDadosAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\buscarPremios.aspx.cs">
+      <DependentUpon>buscarPremios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\buscarPremios.aspx.designer.cs">
+      <DependentUpon>buscarPremios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\buscarPremiosResgatados.aspx.cs">
+      <DependentUpon>buscarPremiosResgatados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\buscarPremiosResgatados.aspx.designer.cs">
+      <DependentUpon>buscarPremiosResgatados.aspx</DependentUpon>
     </Compile>
     <Compile Include="lib\buscarTarefasConcluidas.aspx.cs">
       <DependentUpon>buscarTarefasConcluidas.aspx</DependentUpon>
@@ -126,6 +144,7 @@
     <Compile Include="lib\gerarCodigo.aspx.designer.cs">
       <DependentUpon>gerarCodigo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="classes\listaPremio.cs" />
     <Compile Include="lib\redefinirSenha.aspx.cs">
       <DependentUpon>redefinirSenha.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

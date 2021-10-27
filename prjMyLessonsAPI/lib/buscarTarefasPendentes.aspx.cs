@@ -29,7 +29,7 @@ namespace prjMyLessonsAPI.lib
                 string rm = Request["rm"].ToString();
             #endregion
 
-            #region Busca os dados do aluno
+            #region Busca as tarefas pendentes de um aluno apartir de seu rm
                 listaTarefaAluno tarefas = new listaTarefaAluno(rm);
                 json = "[ ";
                 foreach (var item in tarefas.listarPendentes())
