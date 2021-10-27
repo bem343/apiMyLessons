@@ -43,11 +43,15 @@ namespace prjMyLessonsAPI.lib
 
                 if (aluno.verificarAluno())
                 {
-                    json = "[{'success' : 'true'}]";
-                }
-                else
-                {
-                    json = "[{'success' : 'false'}]";
+                    if (aluno.dados())
+                    {
+                        json = "[";
+                        json += "{'nome':'" + aluno.nome + "'},";
+                        json += "{'qtEsmeraldas':'" + aluno.qtEsmeraldas + "'},";
+                        json += "{'tema':'" + aluno.temaSelecionado.codigo + "'},";
+                        json += "{'avatar':'" + aluno.avatarSelecionado.codigo + "'}";
+                        json += "]";
+                    }
                 }
 
                 json = json.Replace("'", "\"");

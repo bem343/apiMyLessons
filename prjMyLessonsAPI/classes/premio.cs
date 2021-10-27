@@ -18,6 +18,10 @@ namespace prjMyLessonsAPI.classes
         #endregion
 
         #region Construtores
+            public premio(int codigo)
+            {
+                this.codigo = codigo;
+            }
             public premio(int codigo, string nome, string descricao)
             {
                 this.codigo = codigo;

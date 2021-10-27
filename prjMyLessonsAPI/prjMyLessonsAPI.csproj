@@ -70,6 +70,7 @@
     <Content Include="lib\entregarTarefa.aspx" />
     <Content Include="lib\gerarCodigo.aspx" />
     <Content Include="lib\redefinirSenha.aspx" />
+    <Content Include="lib\resgatarPremio.aspx" />
     <Content Include="lib\verificarAluno.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -151,6 +152,13 @@
     </Compile>
     <Compile Include="lib\redefinirSenha.aspx.designer.cs">
       <DependentUpon>redefinirSenha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\resgatarPremio.aspx.cs">
+      <DependentUpon>resgatarPremio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\resgatarPremio.aspx.designer.cs">
+      <DependentUpon>resgatarPremio.aspx</DependentUpon>
     </Compile>
     <Compile Include="lib\verificarAluno.aspx.cs">
       <DependentUpon>verificarAluno.aspx</DependentUpon>
