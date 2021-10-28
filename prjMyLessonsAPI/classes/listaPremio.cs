@@ -9,8 +9,8 @@ namespace prjMyLessonsAPI.classes
     class listaPremio : banco
     {
 
-        private string rm = "";
-        private int mesAtual = 0;
+        private aluno aluno { get; set; }
+        private int mesAtual { get; set; }
         private List<premio> premios = new List<premio>();
         private List<premioAluno> premiosResgatados = new List<premioAluno>();
 
@@ -19,9 +19,9 @@ namespace prjMyLessonsAPI.classes
             {
                 this.mesAtual = mesAtual;
             }
-            public listaPremio(string rm) : base()
+            public listaPremio(aluno aluno) : base()
             {
-                this.rm = rm;
+                this.aluno = aluno;
             }
         #endregion
 
@@ -71,7 +71,7 @@ namespace prjMyLessonsAPI.classes
                 string nomeSP = "buscarPremiosAluno";
                 string[,] parametros = new string[1, 2];
                 parametros[0, 0] = "VRm";
-                parametros[0, 1] = rm;
+                parametros[0, 1] = aluno.rm.ToString();
                 if (Selecionar(nomeSP, parametros, ref dados))
                 {
                     if (dados != null)

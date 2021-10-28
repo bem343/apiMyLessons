@@ -32,14 +32,7 @@ namespace prjMyLessonsAPI.lib
 
             #region Redefine a senha do aluno
                 aluno aluno = new aluno(int.Parse(rm), senha);
-                if (aluno.redefinirSenha())
-                {
-                    json = "[{'bool' : '1'}]";
-                }
-                else
-                {
-                    json = "[{'bool' : '0'}]";
-                }
+                json = "[{'success' : '" + aluno.redefinirSenha() + "'}]";
                 json = json.Replace("'", "\"");
                 Response.Write(json);
                 return;

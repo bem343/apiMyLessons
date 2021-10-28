@@ -10,7 +10,7 @@ namespace prjMyLessonsAPI.classes
 
         #region Propriedades
             public int codigo { get; set; }
-            public int raridade { get; set; }
+            public string raridade { get; set; }
             public string nome { get; set; }
         #endregion
 
@@ -18,6 +18,12 @@ namespace prjMyLessonsAPI.classes
             public avatar(int codigo)
             {
                 this.codigo = codigo;
+            }
+            public avatar(int codigo, string raridade, string nome)
+            {
+                this.codigo = codigo;
+                this.raridade = raridade;
+                this.nome = nome;
             }
         #endregion
 

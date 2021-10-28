@@ -9,13 +9,13 @@ namespace prjMyLessonsAPI.classes
     public class listaTarefaAluno : banco
     {
 
-        private string rm = "";
+        private aluno aluno { get; set; }
         private List<tarefaAluno> tarefas = new List<tarefaAluno>();
 
         #region Construtores
-            public listaTarefaAluno(string rm) : base()
+            public listaTarefaAluno(aluno aluno) : base()
             {
-                this.rm = rm;
+                this.aluno = aluno;
             }
         #endregion
 
@@ -26,7 +26,7 @@ namespace prjMyLessonsAPI.classes
                 string nomeSP = "tarefasPendentesAluno";
                 string[,] parametros = new string[1, 2];
                 parametros[0, 0] = "VRm";
-                parametros[0, 1] = rm;
+                parametros[0, 1] = aluno.rm.ToString();
                 if (Selecionar(nomeSP, parametros, ref dados))
                 {
                     if (dados != null)
@@ -67,7 +67,7 @@ namespace prjMyLessonsAPI.classes
                 string nomeSP = "tarefasConcluidasAluno";
                 string[,] parametros = new string[1, 2];
                 parametros[0, 0] = "VRm";
-                parametros[0, 1] = rm;
+                parametros[0, 1] = aluno.rm.ToString();
                 if (Selecionar(nomeSP, parametros, ref dados))
                 {
                     if (dados != null)

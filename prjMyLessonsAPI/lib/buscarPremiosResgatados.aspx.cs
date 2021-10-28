@@ -30,7 +30,8 @@ namespace prjMyLessonsAPI.lib
             #endregion
 
             #region Busca os prêmios deste mês
-                listaPremio premios = new listaPremio(rm);
+                aluno aluno = new aluno(int.Parse(rm));
+                listaPremio premios = new listaPremio(aluno);
                 json = "[ ";
                 foreach (var item in premios.listarResgatados())
                 {

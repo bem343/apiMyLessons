@@ -34,10 +34,10 @@ namespace prjMyLessonsAPI.lib
                 if (aluno.dados())
                 {
                     json = "[";
-                    json += "{'nome':'" + aluno.nome + "'},";
-                    json += "{'qtEsmeraldas':'" + aluno.qtEsmeraldas + "'},";
-                    json += "{'tema':'" + aluno.temaSelecionado.codigo + "'},";
-                    json += "{'avatar':'" + aluno.avatarSelecionado.codigo + "'}";
+                    json += "{'nome':'" + aluno.nome + "', ";
+                    json += "'qtEsmeraldas':'" + aluno.qtEsmeraldas + "', ";
+                    json += "'tema':'" + aluno.temaSelecionado.codigo + "', ";
+                    json += "'avatar':'" + aluno.avatarSelecionado.codigo + "'}";
                     json += "]";
                 }
                 json = json.Replace("'", "\"");

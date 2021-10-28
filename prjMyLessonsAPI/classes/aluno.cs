@@ -15,8 +15,8 @@ namespace prjMyLessonsAPI.classes
             public string email { get; private set; }
             public string nome { get; set; }
             public int qtEsmeraldas { get; set; }
-            public double nivel { get; set; }
-            public int qtExperiencia { get; set; }
+            public int nivel { get; set; }
+            public double qtExperiencia { get; set; }
 
             public tema temaSelecionado { get; set; }
             public avatar avatarSelecionado { get; set; }
@@ -160,5 +160,38 @@ namespace prjMyLessonsAPI.classes
                 return Executar(nomeSP, parametros);
             }
         #endregion
+
+        #region Busca o nível do aluno
+            public bool pegaNivel()
+            {
+                MySqlDataReader dados = null;
+                string nomeSP = "CalcularNivelAluno";
+                string[,] parametros = new string[1, 2];
+                parametros[0, 0] = "VRm";
+                parametros[0, 1] = rm.ToString();
+                if (Selecionar(nomeSP, parametros, ref dados))
+                {
+                    if (dados != null)
+                    {
+                        if (dados.HasRows)
+                        {
+                            while (dados.Read())
+                            {
+                                double nivelBruto = double.Parse(dados["nivel"].ToString());
+                                this.nivel = Convert.ToInt32(Math.Floor(nivelBruto));
+                                this.qtExperiencia = nivelBruto;
+                            }
+                            fechaDados(dados);
+                            fechaConexao();
+                            return true;
+                        }
+                    }
+                }
+                fechaDados(dados);
+                fechaConexao();
+                return false;
+            }
+        #endregion
+
     }
 }
