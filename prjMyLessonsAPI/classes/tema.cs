@@ -18,6 +18,11 @@ namespace prjMyLessonsAPI.classes
             {
                 this.codigo = codigo;
             }
+            public tema(int codigo, string nome)
+            {
+                this.codigo = codigo;
+                this.nome = nome;
+            }
         #endregion
 
     }

@@ -8,7 +8,7 @@ using prjMyLessonsAPI.classes;
 
 namespace prjMyLessonsAPI.lib
 {
-    public partial class buscarAvatares : System.Web.UI.Page
+    public partial class buscarTemas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,17 +33,16 @@ namespace prjMyLessonsAPI.lib
                 aluno aluno = new aluno(int.Parse(rm));
                 if (aluno.pegaNivel())
                 {
-                    listaAvatar avatares = new listaAvatar(aluno);
+                    listaTema temas = new listaTema(aluno);
                     json = "[";
                     json += "{'nivel':'" + aluno.nivel + "', ";
                     json += "'porcentagem':'" + fazPorcentagem(aluno.qtExperiencia, aluno.nivel) + "', ";
-                    json += "'qtTotalAvatares':'" + avatares.quantidadeTotal() + "'}, ";
+                    json += "'qtTotalTemas':'" + temas.quantidadeTotal() + "'}, ";
                     json += "[";
-                    foreach (var item in avatares.doAluno())
+                    foreach (var item in temas.doAluno())
                     {
-                        json += "{'codigo':'" + item.avatar.codigo + "', ";
-                        json += "'nome':'" + item.avatar.nome + "', ";
-                        json += "'raridade':'" + item.avatar.raridade + "'},";
+                        json += "{'codigo':'" + item.tema.codigo + "', ";
+                        json += "'nome':'" + item.tema.nome + "'},";
                     }
                     json = json.Substring(0, json.Length - 1);
                     json += "]";
@@ -59,7 +58,7 @@ namespace prjMyLessonsAPI.lib
             private string fazPorcentagem(double quebrado, int inteiro)
             {
                 string porcentagem = ((quebrado - inteiro) * 100).ToString("##");
-                if(porcentagem == "")
+                if (porcentagem == "")
                 {
                     return "0";
                 }

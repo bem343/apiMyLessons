@@ -68,6 +68,7 @@
     <Content Include="lib\buscarPremiosResgatados.aspx" />
     <Content Include="lib\buscarTarefasConcluidas.aspx" />
     <Content Include="lib\buscarTarefasPendentes.aspx" />
+    <Content Include="lib\buscarTemas.aspx" />
     <Content Include="lib\entregarTarefa.aspx" />
     <Content Include="lib\gerarCodigo.aspx" />
     <Content Include="lib\redefinirSenha.aspx" />
@@ -92,12 +93,14 @@
     <Compile Include="classes\formatacao.cs" />
     <Compile Include="classes\listaAvatar.cs" />
     <Compile Include="classes\listaTarefaAluno.cs" />
+    <Compile Include="classes\listaTema.cs" />
     <Compile Include="classes\premio.cs" />
     <Compile Include="classes\premioAluno.cs" />
     <Compile Include="classes\professor.cs" />
     <Compile Include="classes\tarefa.cs" />
     <Compile Include="classes\tarefaAluno.cs" />
     <Compile Include="classes\tema.cs" />
+    <Compile Include="classes\temaAluno.cs" />
     <Compile Include="classes\turma.cs" />
     <Compile Include="lib\buscarAvatares.aspx.cs">
       <DependentUpon>buscarAvatares.aspx</DependentUpon>
@@ -140,6 +143,13 @@
     </Compile>
     <Compile Include="lib\buscarTarefasPendentes.aspx.designer.cs">
       <DependentUpon>buscarTarefasPendentes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\buscarTemas.aspx.cs">
+      <DependentUpon>buscarTemas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\buscarTemas.aspx.designer.cs">
+      <DependentUpon>buscarTemas.aspx</DependentUpon>
     </Compile>
     <Compile Include="lib\entregarTarefa.aspx.cs">
       <DependentUpon>entregarTarefa.aspx</DependentUpon>

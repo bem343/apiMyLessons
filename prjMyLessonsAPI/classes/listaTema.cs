@@ -6,25 +6,25 @@ using MySql.Data.MySqlClient;
 
 namespace prjMyLessonsAPI.classes
 {
-    public class listaAvatar : banco
+    public class listaTema : banco
     {
 
         private aluno aluno { get; set; }
-        private List<avatarAluno> avatares = new List<avatarAluno>();
+        private List<temaAluno> temas = new List<temaAluno>();
 
         #region Construtores
-            public listaAvatar(aluno aluno) : base()
+            public listaTema(aluno aluno) : base()
             {
                 this.aluno = aluno;
             }
         #endregion
 
-        #region Traz o número total de avatares
+        #region Traz o número total de temas
             public int quantidadeTotal()
             {
                 int quantidade = 0;
                 MySqlDataReader dados = null;
-                string nomeSP = "BuscalTotalAvatar";
+                string nomeSP = "BuscalTotalTema";
                 string[,] parametros = new string[0, 0];
                 if (Selecionar(nomeSP, parametros, ref dados))
                 {
@@ -46,11 +46,11 @@ namespace prjMyLessonsAPI.classes
             }
         #endregion
 
-        #region Traz os avatares do aluno
-            public List<avatarAluno> doAluno()
+        #region Traz os temas do aluno
+            public List<temaAluno> doAluno()
             {
                 MySqlDataReader dados = null;
-                string nomeSP = "BuscalAvatarAluno";
+                string nomeSP = "BuscalTemaAluno";
                 string[,] parametros = new string[1, 2];
                 parametros[0, 0] = "vRm";
                 parametros[0, 1] = aluno.rm.ToString();
@@ -62,22 +62,21 @@ namespace prjMyLessonsAPI.classes
                         {
                             while (dados.Read())
                             {
-                                string sCodigoAvatar = dados["cd_avatar"].ToString();
-                                string sNomeAvatar = dados["nm_avatar"].ToString();
-                                string sRaridadeAvatar = dados["nm_raridade"].ToString();
+                                string sCodigoTema = dados["cd_tema"].ToString();
+                                string sNomeTema = dados["nm_tema"].ToString();
                                 string sSelecionado = dados["ic_selecionado"].ToString();
-                                int codigoAvatar = int.Parse(sCodigoAvatar);
+                                int codigoTema = int.Parse(sCodigoTema);
                                 bool selecionado = bool.Parse(sSelecionado);
-                                avatar avatar = new avatar(codigoAvatar, sRaridadeAvatar, sNomeAvatar);
-                                avatarAluno avatarAluno = new avatarAluno(aluno, avatar, selecionado);
-                                avatares.Add(avatarAluno);
+                                tema tema = new tema(codigoTema, sNomeTema);
+                                temaAluno temaAluno = new temaAluno(aluno, tema, selecionado);
+                                temas.Add(temaAluno);
                             }
                         }
                     }
                 }
                 fechaDados(dados);
                 fechaConexao();
-                return avatares;
+                return temas;
             }
         #endregion
 
