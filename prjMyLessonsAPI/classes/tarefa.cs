@@ -13,7 +13,7 @@ namespace prjMyLessonsAPI.classes
             public string titulo { get; set; }
             public string descricao { get; set; }
             public bool atribuida { get; set; }
-
+            
             public professor professor { get; set; }
             public disciplina disciplina { get; set; }
         #endregion

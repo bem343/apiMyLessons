@@ -6,14 +6,14 @@ using MySql.Data.MySqlClient;
 
 namespace prjMyLessonsAPI.classes
 {
-    public class listaTema : banco
+    public class listaTemaAluno : banco
     {
 
         private aluno aluno { get; set; }
         private List<temaAluno> temas = new List<temaAluno>();
 
         #region Construtores
-            public listaTema(aluno aluno) : base()
+            public listaTemaAluno(aluno aluno) : base()
             {
                 this.aluno = aluno;
             }

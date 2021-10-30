@@ -89,13 +89,17 @@
     <Compile Include="classes\avatar.cs" />
     <Compile Include="classes\avatarAluno.cs" />
     <Compile Include="classes\banco.cs" />
+    <Compile Include="classes\conquista.cs" />
+    <Compile Include="classes\conquistaAluno.cs" />
     <Compile Include="classes\disciplina.cs" />
     <Compile Include="classes\email.cs" />
     <Compile Include="classes\execucao.cs" />
     <Compile Include="classes\formatacao.cs" />
     <Compile Include="classes\listaAvatar.cs" />
+    <Compile Include="classes\listaConquista.cs" />
+    <Compile Include="classes\listaConquistaAluno.cs" />
     <Compile Include="classes\listaTarefaAluno.cs" />
-    <Compile Include="classes\listaTema.cs" />
+    <Compile Include="classes\listaTemaAluno.cs" />
     <Compile Include="classes\premio.cs" />
     <Compile Include="classes\premioAluno.cs" />
     <Compile Include="classes\professor.cs" />
@@ -103,6 +107,7 @@
     <Compile Include="classes\tarefaAluno.cs" />
     <Compile Include="classes\tema.cs" />
     <Compile Include="classes\temaAluno.cs" />
+    <Compile Include="classes\tipoConquista.cs" />
     <Compile Include="classes\turma.cs" />
     <Compile Include="lib\buscarAvatares.aspx.cs">
       <DependentUpon>buscarAvatares.aspx</DependentUpon>

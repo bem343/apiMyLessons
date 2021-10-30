@@ -97,5 +97,34 @@ namespace prjMyLessonsAPI.classes
             }
         #endregion
 
+        #region Traz o número de tarefas feitas pelo aluno
+            public int quantidadeTotal()
+            {
+                int quantidade = 0;
+                MySqlDataReader dados = null;
+                string nomeSP = "QuantidadeTarefasFeitas";
+                string[,] parametros = new string[1, 2];
+                parametros[0, 0] = "vRm";
+                parametros[0, 1] = aluno.rm.ToString();
+                if (Selecionar(nomeSP, parametros, ref dados))
+                {
+                    if (dados != null)
+                    {
+                        if (dados.HasRows)
+                        {
+                            while (dados.Read())
+                            {
+                                string sQuantidade = dados["quantidade"].ToString();
+                                quantidade = int.Parse(sQuantidade);
+                            }
+                        }
+                    }
+                }
+                fechaDados(dados);
+                fechaConexao();
+                return quantidade;
+            }
+        #endregion
+
     }
 }

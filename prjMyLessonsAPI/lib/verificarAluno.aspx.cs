@@ -15,6 +15,7 @@ namespace prjMyLessonsAPI.lib
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             Response.ContentType = "application/json";
             string json = "[]";
 

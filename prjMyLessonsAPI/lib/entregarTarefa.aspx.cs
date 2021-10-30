@@ -36,7 +36,25 @@ namespace prjMyLessonsAPI.lib
                 aluno aluno = new aluno(int.Parse(rm));
                 tarefa tarefa = new tarefa(int.Parse(cdTarefa));
                 tarefaAluno tarefaAluno = new tarefaAluno(tarefa, aluno);
-                json = "[{'success' : '" + tarefaAluno.entregar(int.Parse(experiencia), int.Parse(esmeralda)).ToString() + "'}]";
+                json = "[{'success' : '" + tarefaAluno.entregar(int.Parse(experiencia), int.Parse(esmeralda)).ToString() + "'}, ";
+                json += "[ ";
+
+                    //concatena com as conquista alcançadas
+                    int qtTarefasFeitas = new listaTarefaAluno(aluno).quantidadeTotal();
+                    listaConquista conquistas = new listaConquista(new tipoConquista(1, "Tarefa"));
+                    foreach (var item in conquistas.listar())
+                    {
+                        if (qtTarefasFeitas >= item.qtObjetivo)
+                        {
+                            if (new conquistaAluno(aluno, item).desbloquear())
+                            {
+                                json += "{'codigo':'" + item.codigo + "'},";
+                            }
+                        }
+                    }
+
+                json = json.Substring(0, json.Length - 1);
+                json += "]]";
                 json = json.Replace("'", "\"");
                 Response.Write(json);
                 return;
