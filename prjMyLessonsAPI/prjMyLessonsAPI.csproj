@@ -73,6 +73,8 @@
     <Content Include="lib\gerarCodigo.aspx" />
     <Content Include="lib\redefinirSenha.aspx" />
     <Content Include="lib\resgatarPremio.aspx" />
+    <Content Include="lib\trocarAvatarAluno.aspx" />
+    <Content Include="lib\trocarTemaAluno.aspx" />
     <Content Include="lib\verificarAluno.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -179,6 +181,20 @@
     </Compile>
     <Compile Include="lib\resgatarPremio.aspx.designer.cs">
       <DependentUpon>resgatarPremio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\trocarAvatarAluno.aspx.cs">
+      <DependentUpon>trocarAvatarAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\trocarAvatarAluno.aspx.designer.cs">
+      <DependentUpon>trocarAvatarAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\trocarTemaAluno.aspx.cs">
+      <DependentUpon>trocarTemaAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\trocarTemaAluno.aspx.designer.cs">
+      <DependentUpon>trocarTemaAluno.aspx</DependentUpon>
     </Compile>
     <Compile Include="lib\verificarAluno.aspx.cs">
       <DependentUpon>verificarAluno.aspx</DependentUpon>
