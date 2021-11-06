@@ -36,8 +36,14 @@ namespace prjMyLessonsAPI.classes
                             while (dados.Read())
                             {
                                 string sCdConquista = dados["cd_conquista"].ToString();
+                                string dsConquista = dados["ds_conquista"].ToString();
+                                string nmConquista = dados["nm_conquista"].ToString();
+                                string sQtExperiencia = dados["qt_experiencia"].ToString();
+                                string sQtObjetivo = dados["qt_objetivo_conquista"].ToString();
                                 int cdConquista = int.Parse(sCdConquista);
-                                conquista conquista = new conquista(cdConquista);
+                                int qtExperiencia = int.Parse(sQtExperiencia);
+                                int qtObjetivo = int.Parse(sQtObjetivo);
+                                conquista conquista = new conquista(cdConquista, nmConquista, dsConquista, qtExperiencia, qtObjetivo);
                                 conquistaAluno conquistaAluno = new conquistaAluno(aluno, conquista);
                                 conquistas.Add(conquistaAluno);
                             }

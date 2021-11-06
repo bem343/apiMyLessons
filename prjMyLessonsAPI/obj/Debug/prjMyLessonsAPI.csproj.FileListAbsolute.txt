@@ -16,3 +16,8 @@ C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyL
 C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csproj.CopyComplete
 C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.dll
 C:\Users\lucas\OneDrive\Área de Trabalho\Escola\TCC\backend\apiMyLessons\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.pdb
+C:\Users\aluno.ETECAF\Desktop\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.dll
+C:\Users\aluno.ETECAF\Desktop\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.pdb
+C:\Users\aluno.ETECAF\Desktop\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csprojResolveAssemblyReference.cache
+C:\Users\aluno.ETECAF\Desktop\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.dll
+C:\Users\aluno.ETECAF\Desktop\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.pdb

@@ -40,20 +40,27 @@ namespace prjMyLessonsAPI.lib
                 json += "[ ";
 
                     //concatena com as conquista alcançadas
+                    string conquistasDesbloqueadas = "";
                     int qtTarefasFeitas = new listaTarefaAluno(aluno).quantidadeTotal();
                     listaConquista conquistas = new listaConquista(new tipoConquista(1, "Tarefa"));
-                    foreach (var item in conquistas.listar())
+                    foreach (var item in conquistas.listarBloqueadas(rm))
                     {
                         if (qtTarefasFeitas >= item.qtObjetivo)
                         {
                             if (new conquistaAluno(aluno, item).desbloquear())
                             {
-                                json += "{'codigo':'" + item.codigo + "'},";
+                                conquistasDesbloqueadas += "{'codigo':'" + item.codigo + "',";
+                                conquistasDesbloqueadas += "'nome':'" + item.nome + "',";
+                                conquistasDesbloqueadas += "'qtExperiencia':'" + item.qtExperiencia + "'},";
                             }
                         }
                     }
 
-                json = json.Substring(0, json.Length - 1);
+                if(conquistasDesbloqueadas != "")
+                {
+                    conquistasDesbloqueadas = conquistasDesbloqueadas.Substring(0, conquistasDesbloqueadas.Length - 1);
+                }
+                json += conquistasDesbloqueadas;
                 json += "]]";
                 json = json.Replace("'", "\"");
                 Response.Write(json);

@@ -18,6 +18,7 @@ namespace prjMyLessonsAPI.lib
                 int mesAtual = DateTime.Now.Month;
                 listaPremio premios = new listaPremio(mesAtual);
                 string json = "[ ";
+
                 foreach (var item in premios.listar())
                 {
                     json += "{'codigo':'" + item.codigo + "', ";
