@@ -33,11 +33,13 @@ namespace prjMyLessonsAPI.lib
             #endregion
 
             #region Entrega uma tarefa
+                int nivelAtual = 0;
+                int nivelObtido = 0;
                 aluno aluno = new aluno(int.Parse(rm));
                 tarefa tarefa = new tarefa(int.Parse(cdTarefa));
                 tarefaAluno tarefaAluno = new tarefaAluno(tarefa, aluno);
+                if (aluno.pegaNivel()) { nivelAtual = aluno.nivel; }
                 json = "[{'success' : '" + tarefaAluno.entregar(int.Parse(experiencia), int.Parse(esmeralda)).ToString() + "'}, ";
-                json += "[ ";
 
                     //concatena com as conquista alcançadas
                     string conquistasDesbloqueadas = "";
@@ -55,17 +57,36 @@ namespace prjMyLessonsAPI.lib
                             }
                         }
                     }
+                    if (conquistasDesbloqueadas != "") { conquistasDesbloqueadas = conquistasDesbloqueadas.Substring(0, conquistasDesbloqueadas.Length - 1); }
 
-                if(conquistasDesbloqueadas != "")
-                {
-                    conquistasDesbloqueadas = conquistasDesbloqueadas.Substring(0, conquistasDesbloqueadas.Length - 1);
-                }
-                json += conquistasDesbloqueadas;
-                json += "]]";
+                    //concatena com a experiencia
+                    string textoNivel = "{";
+                    if (aluno.pegaNivel()) { nivelObtido = aluno.nivel; }
+                    if(nivelAtual != nivelObtido)
+                    {
+                        int nivel = aluno.nivel;
+                        textoNivel += "'nivel':'" + nivel + "', 'porcentagem':'" + fazPorcentagem(aluno.qtExperiencia, nivel) + "'";
+                    }
+                    json += textoNivel + "}, ";
+
+                json += "[" + conquistasDesbloqueadas + "]";
+                json += "]";
                 json = json.Replace("'", "\"");
                 Response.Write(json);
                 return;
             #endregion
         }
+
+        #region Verifica se a conta deu vai ficar fazia, para então substituir por zero
+            private string fazPorcentagem(double quebrado, int inteiro)
+            {
+                string porcentagem = ((quebrado - inteiro) * 100).ToString("##");
+                if (porcentagem == "")
+                {
+                    return "0";
+                }
+                return porcentagem;
+            }
+        #endregion
     }
 }

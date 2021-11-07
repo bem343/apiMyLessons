@@ -30,7 +30,10 @@ namespace prjMyLessonsAPI.classes
                 parametros[0, 1] = aluno.rm.ToString();
                 parametros[1, 0] = "vConquista";
                 parametros[1, 1] = conquista.codigo.ToString();
-                return Executar(nomeSP, parametros);
+                bool atualizacao = aluno.atualizarXpEsmeraldas(conquista.qtExperiencia, 0);
+                bool desbloqueio = Executar(nomeSP, parametros);
+                if (atualizacao && desbloqueio) { return true; }
+                return false;
             }
         #endregion
 

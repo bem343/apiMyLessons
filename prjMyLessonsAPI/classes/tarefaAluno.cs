@@ -50,18 +50,16 @@ namespace prjMyLessonsAPI.classes
             public bool entregar(int experiencia, int esmeralda)
             {
                 string nomeSP = "EntregaTarefaAluno";
-                string[,] parametros = new string[2, 2];
+                string[,] parametros = new string[4, 2];
                 parametros[0, 0] = "VRm";
                 parametros[0, 1] = aluno.rm.ToString();
                 parametros[1, 0] = "vTarefa";
                 parametros[1, 1] = tarefa.codigo.ToString();
-                bool atualizacao = aluno.atualizarXpEsmeraldas(experiencia, esmeralda);
-                bool entrega = Executar(nomeSP, parametros);
-                if (atualizacao && entrega)
-                {
-                    return true;
-                }
-                return false;
+                parametros[2, 0] = "vXp";
+                parametros[2, 1] = experiencia.ToString();
+                parametros[3, 0] = "vEsmeralda";
+                parametros[3, 1] = esmeralda.ToString();
+                return Executar(nomeSP, parametros);
             }
         #endregion
 
