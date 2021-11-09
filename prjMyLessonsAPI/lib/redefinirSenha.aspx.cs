@@ -34,6 +34,7 @@ namespace prjMyLessonsAPI.lib
                 aluno aluno = new aluno(int.Parse(rm), senha);
                 json = "[{'success' : '" + aluno.redefinirSenha() + "'}]";
                 json = json.Replace("'", "\"");
+                Response.AppendHeader("Access-Control-Allow-Origin", "*");
                 Response.Write(json);
                 return;
             #endregion

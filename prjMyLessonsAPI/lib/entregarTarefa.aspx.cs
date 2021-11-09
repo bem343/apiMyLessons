@@ -60,18 +60,31 @@ namespace prjMyLessonsAPI.lib
                     if (conquistasDesbloqueadas != "") { conquistasDesbloqueadas = conquistasDesbloqueadas.Substring(0, conquistasDesbloqueadas.Length - 1); }
 
                     //concatena com a experiencia
-                    string textoNivel = "{";
+                    string textoNivel = "[";
                     if (aluno.pegaNivel()) { nivelObtido = aluno.nivel; }
                     if(nivelAtual != nivelObtido)
                     {
                         int nivel = aluno.nivel;
-                        textoNivel += "'nivel':'" + nivel + "', 'porcentagem':'" + fazPorcentagem(aluno.qtExperiencia, nivel) + "'";
+                        textoNivel += "{'nivel':'" + nivel + "', 'porcentagem':'" + fazPorcentagem(aluno.qtExperiencia, nivel) + "'}, ";
+
+                            switch (new Random().Next(2))
+                            {
+                                case 0:
+
+                                    break;
+                                case 1:
+
+                                    break;
+                            }
+
+                        textoNivel += "{'tipo':'-', 'codigo':'-', 'nome':'-', 'raridade':'-', 'imagem':'-'}, ";
                     }
-                    json += textoNivel + "}, ";
+                    json += textoNivel + "], ";
 
                 json += "[" + conquistasDesbloqueadas + "]";
                 json += "]";
                 json = json.Replace("'", "\"");
+                Response.AppendHeader("Access-Control-Allow-Origin", "*");
                 Response.Write(json);
                 return;
             #endregion

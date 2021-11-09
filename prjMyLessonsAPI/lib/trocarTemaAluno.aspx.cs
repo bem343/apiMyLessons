@@ -36,6 +36,7 @@ namespace prjMyLessonsAPI.lib
                 temaAluno temaAluno = new temaAluno(aluno, tema, true);
                 json = "[{'success':'" + temaAluno.trocar() + "'}]";
                 json = json.Replace("'", "\"");
+                Response.AppendHeader("Access-Control-Allow-Origin", "*");
                 Response.Write(json);
                 return;
             #endregion

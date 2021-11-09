@@ -45,6 +45,7 @@ namespace prjMyLessonsAPI.lib
                 json = json.Substring(0, json.Length - 1);
                 json = json.Replace("'", "\"");
                 json += "]";
+                Response.AppendHeader("Access-Control-Allow-Origin", "*");
                 Response.Write(json);
                 return;
             #endregion

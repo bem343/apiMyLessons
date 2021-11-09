@@ -36,6 +36,7 @@ namespace prjMyLessonsAPI.lib
                 premioAluno premioAluno = new premioAluno(premio, aluno);
                 json = "[{'success' : '" + premioAluno.resgatar().ToString() + "'}]";   
                 json = json.Replace("'", "\"");
+                Response.AppendHeader("Access-Control-Allow-Origin", "*");
                 Response.Write(json);
                 return;
             #endregion

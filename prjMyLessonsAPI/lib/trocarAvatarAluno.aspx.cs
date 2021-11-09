@@ -36,6 +36,7 @@ namespace prjMyLessonsAPI.lib
                 avatarAluno avatarAluno = new avatarAluno(aluno, avatar, true);
                 json = "[{'success':'" + avatarAluno.trocar() + "'}]";
                 json = json.Replace("'", "\"");
+                Response.AppendHeader("Access-Control-Allow-Origin", "*");
                 Response.Write(json);
                 return;
             #endregion

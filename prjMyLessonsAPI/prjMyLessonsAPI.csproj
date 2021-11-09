@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dlls\MySql.Data.dll" />
+    <Content Include="img\avatar aranha.jpg" />
     <Content Include="lib\buscarAvatares.aspx" />
     <Content Include="lib\buscarDadosAluno.aspx" />
     <Content Include="lib\buscarPremios.aspx" />
