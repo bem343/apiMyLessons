@@ -41,45 +41,75 @@ namespace prjMyLessonsAPI.lib
                 if (aluno.pegaNivel()) { nivelAtual = aluno.nivel; }
                 json = "[{'success' : '" + tarefaAluno.entregar(int.Parse(experiencia), int.Parse(esmeralda)).ToString() + "'}, ";
 
-                    //concatena com as conquista alcançadas
-                    string conquistasDesbloqueadas = "";
-                    int qtTarefasFeitas = new listaTarefaAluno(aluno).quantidadeTotal();
-                    listaConquista conquistas = new listaConquista(new tipoConquista(1, "Tarefa"));
-                    foreach (var item in conquistas.listarBloqueadas(rm))
-                    {
-                        if (qtTarefasFeitas >= item.qtObjetivo)
+                    #region concatena com as conquista alcançadas
+                        string conquistasDesbloqueadas = "";
+                        int qtTarefasFeitas = new listaTarefaAluno(aluno).quantidadeTotal();
+                        listaConquista conquistas = new listaConquista(new tipoConquista(1, "Tarefa"));
+                        foreach (var item in conquistas.listarBloqueadas(rm))
                         {
-                            if (new conquistaAluno(aluno, item).desbloquear())
+                            if (qtTarefasFeitas >= item.qtObjetivo)
                             {
-                                conquistasDesbloqueadas += "{'codigo':'" + item.codigo + "',";
-                                conquistasDesbloqueadas += "'nome':'" + item.nome + "',";
-                                conquistasDesbloqueadas += "'qtExperiencia':'" + item.qtExperiencia + "'},";
+                                if (new conquistaAluno(aluno, item).desbloquear())
+                                {
+                                    conquistasDesbloqueadas += "{'codigo':'" + item.codigo + "',";
+                                    conquistasDesbloqueadas += "'nome':'" + item.nome + "',";
+                                    conquistasDesbloqueadas += "'qtExperiencia':'" + item.qtExperiencia + "'},";
+                                }
                             }
                         }
-                    }
-                    if (conquistasDesbloqueadas != "") { conquistasDesbloqueadas = conquistasDesbloqueadas.Substring(0, conquistasDesbloqueadas.Length - 1); }
+                        if (conquistasDesbloqueadas != "") { conquistasDesbloqueadas = conquistasDesbloqueadas.Substring(0, conquistasDesbloqueadas.Length - 1); }
+                    #endregion
 
-                    //concatena com a experiencia
-                    string textoNivel = "[";
-                    if (aluno.pegaNivel()) { nivelObtido = aluno.nivel; }
-                    if(nivelAtual != nivelObtido)
-                    {
-                        int nivel = aluno.nivel;
-                        textoNivel += "{'nivel':'" + nivel + "', 'porcentagem':'" + fazPorcentagem(aluno.qtExperiencia, nivel) + "'}, ";
+                    #region concatena com a experiencia
+                        string textoNivel = "";
+                        if (aluno.pegaNivel()) { nivelObtido = aluno.nivel; }
+                        if(nivelAtual != nivelObtido)
+                        {
+                            int nivel = aluno.nivel;
+                            textoNivel = "{'nivel':'" + nivel + "', 'porcentagem':'" + fazPorcentagem(aluno.qtExperiencia, nivel) + "'}, ";
 
-                            switch (new Random().Next(2))
+                            Random n = new Random();
+                            switch (n.Next(2))
                             {
                                 case 0:
-
+                                    //Avatar
+                                    listaAvatar avatares = new listaAvatar();
+                                    List<avatar> sorteio = new List<avatar>();
+                                    foreach (var item in avatares.todos())
+                                    {
+                                        int numeroDeVezes = (5 + ((item.raridade.codigo - 1) * -1));
+                                        for (int i = 0; i < numeroDeVezes; i++)
+                                        {
+                                            sorteio.Add(item);
+                                        }
+                                    }
+                                    int numero = n.Next(sorteio.Count);
+                                    avatar escolhido = sorteio[numero];
+                                    textoNivel += "{'tipo':'avatar', ";
+                                    textoNivel += "'codigo':'" + escolhido.codigo + "', ";
+                                    textoNivel += "'nome':'" + escolhido.nome + "', ";
+                                    textoNivel += "'raridade':'" + escolhido.raridade.codigo + "', ";
+                                    textoNivel += "'pasta':'img/avatares/', ";
+                                    textoNivel += "'imagem':'" + escolhido.codigo + ".jpg'} ";
                                     break;
                                 case 1:
-
+                                    //Tema
+                                    listaTema temas = new listaTema();
+                                    List<tema> sorteioT = temas.todos();
+                                    int Tnumero = n.Next(sorteioT.Count);
+                                    tema Tescolhido = sorteioT[Tnumero];
+                                    textoNivel += "{'tipo':'tema', ";
+                                    textoNivel += "'codigo':'" + Tescolhido.codigo + "', ";
+                                    textoNivel += "'nome':'" + Tescolhido.nome + "', ";
+                                    textoNivel += "'raridade':'0', ";
+                                    textoNivel += "'pasta':'img/temas/', ";
+                                    textoNivel += "'imagem':'" + Tescolhido.codigo + ".jpg'} ";
                                     break;
                             }
 
-                        textoNivel += "{'tipo':'-', 'codigo':'-', 'nome':'-', 'raridade':'-', 'imagem':'-'}, ";
-                    }
-                    json += textoNivel + "], ";
+                        }
+                        json += "[" + textoNivel + "], ";
+                    #endregion
 
                 json += "[" + conquistasDesbloqueadas + "]";
                 json += "]";

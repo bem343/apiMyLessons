@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dlls\MySql.Data.dll" />
-    <Content Include="img\avatar aranha.jpg" />
+    <Content Include="img\avatares\6.jpg" />
     <Content Include="lib\buscarAvatares.aspx" />
     <Content Include="lib\buscarDadosAluno.aspx" />
     <Content Include="lib\buscarPremios.aspx" />
@@ -97,13 +97,16 @@
     <Compile Include="classes\execucao.cs" />
     <Compile Include="classes\formatacao.cs" />
     <Compile Include="classes\listaAvatar.cs" />
+    <Compile Include="classes\listaAvatarAluno.cs" />
     <Compile Include="classes\listaConquista.cs" />
     <Compile Include="classes\listaConquistaAluno.cs" />
     <Compile Include="classes\listaTarefaAluno.cs" />
+    <Compile Include="classes\listaTema.cs" />
     <Compile Include="classes\listaTemaAluno.cs" />
     <Compile Include="classes\premio.cs" />
     <Compile Include="classes\premioAluno.cs" />
     <Compile Include="classes\professor.cs" />
+    <Compile Include="classes\raridade.cs" />
     <Compile Include="classes\tarefa.cs" />
     <Compile Include="classes\tarefaAluno.cs" />
     <Compile Include="classes\tema.cs" />
@@ -210,6 +213,9 @@
       <DependentUpon>verificarAluno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\temas\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

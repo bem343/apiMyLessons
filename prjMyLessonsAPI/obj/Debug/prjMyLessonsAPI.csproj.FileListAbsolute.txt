@@ -21,3 +21,8 @@ C:\Users\aluno.ETECAF\Desktop\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAP
 C:\Users\aluno.ETECAF\Desktop\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csprojResolveAssemblyReference.cache
 C:\Users\aluno.ETECAF\Desktop\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.dll
 C:\Users\aluno.ETECAF\Desktop\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.pdb
+E:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.dll
+E:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.pdb
+E:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csprojResolveAssemblyReference.cache
+E:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.dll
+E:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.pdb

@@ -6,25 +6,25 @@ using MySql.Data.MySqlClient;
 
 namespace prjMyLessonsAPI.classes
 {
-    public class listaAvatar : banco
+    public class listaTema : banco
     {
 
         #region Propriedades
-            private List<avatar> avatares = new List<avatar>();
+            private List<tema> temas = new List<tema>();
         #endregion
 
         #region Construtores
-        public listaAvatar() : base()
+        public listaTema() : base()
             {
 
             }
         #endregion
 
         #region Traz os avatares do banco
-            public List<avatar> todos()
+            public List<tema> todos()
             {
                 MySqlDataReader dados = null;
-                string nomeSP = "BuscarAvatares";
+                string nomeSP = "BuscarTemas";
                 string[,] parametros = new string[0, 0];
                 if (Selecionar(nomeSP, parametros, ref dados))
                 {
@@ -34,21 +34,18 @@ namespace prjMyLessonsAPI.classes
                         {
                             while (dados.Read())
                             {
-                                string sCodigoAvatar = dados["cd_avatar"].ToString();
-                                string sNomeAvatar = dados["nm_avatar"].ToString();
-                                string sCodigoRaridade = dados["cd_raridade"].ToString();
-                                int codigoAvatar = int.Parse(sCodigoAvatar);
-                                int codigoRaridade = int.Parse(sCodigoRaridade);
-                                raridade raridade = new raridade(codigoRaridade);
-                                avatar avatar = new avatar(codigoAvatar, sNomeAvatar, raridade);
-                                avatares.Add(avatar);
+                                string sCodigoTema = dados["cd_tema"].ToString();
+                                string sNomeTema = dados["nm_tema"].ToString();
+                                int codigoTema = int.Parse(sCodigoTema);
+                                tema tema = new tema(codigoTema, sNomeTema);
+                                temas.Add(tema);
                             }
                         }
                     }
                 }
                 fechaDados(dados);
                 fechaConexao();
-                return avatares;
+                return temas;
             }
             #endregion
 

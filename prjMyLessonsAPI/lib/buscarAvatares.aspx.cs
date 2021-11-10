@@ -33,7 +33,7 @@ namespace prjMyLessonsAPI.lib
                 aluno aluno = new aluno(int.Parse(rm));
                 if (aluno.pegaNivel())
                 {
-                    listaAvatar avatares = new listaAvatar(aluno);
+                    listaAvatarAluno avatares = new listaAvatarAluno(aluno);
                     json = "[";
                     json += "{'nivel':'" + aluno.nivel + "', ";
                     json += "'porcentagem':'" + fazPorcentagem(aluno.qtExperiencia, aluno.nivel) + "', ";

@@ -5,27 +5,28 @@ using System.Web;
 
 namespace prjMyLessonsAPI.classes
 {
-    public class avatar
+    public class raridade
     {
 
         #region Propriedades
             public int codigo { get; set; }
             public string nome { get; set; }
-            public raridade raridade { get; set; }
         #endregion
 
         #region Construtores
-            public avatar(int codigo)
+            public raridade(int codigo): base()
             {
                 this.codigo = codigo;
             }
-            public avatar(int codigo, string nome, raridade raridade)
+            public raridade(string nome): base()
+            {
+                this.nome = nome;
+            }
+            public raridade(int codigo, string nome) : base()
             {
                 this.codigo = codigo;
                 this.nome = nome;
-                this.raridade = raridade;
             }
         #endregion
-
     }
 }
