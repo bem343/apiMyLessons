@@ -38,7 +38,9 @@ namespace prjMyLessonsAPI.classes
                                 string codigoTarefa = dados["cd_tarefa"].ToString();
                                 string titulo = dados["nm_titulo_tarefa"].ToString();
                                 string descricao = dados["ds_tarefa"].ToString();
-                                tarefa tarefa = new tarefa(int.Parse(codigoTarefa), titulo, descricao);
+                                string nmDisciplina = dados["nm_disciplina"].ToString();
+                                disciplina disciplina = new disciplina(nmDisciplina);
+                                tarefa tarefa = new tarefa(int.Parse(codigoTarefa), titulo, descricao, disciplina);
 
                                 string dtInicio = dados["dt_inicio_tarefa"].ToString();
                                 string hrInicio = dados["hr_inicio_tarefa"].ToString();
@@ -79,7 +81,9 @@ namespace prjMyLessonsAPI.classes
                                 string codigoTarefa = dados["cd_tarefa"].ToString();
                                 string titulo = dados["nm_titulo_tarefa"].ToString();
                                 string descricao = dados["ds_tarefa"].ToString();
-                                tarefa tarefa = new tarefa(int.Parse(codigoTarefa), titulo, descricao);
+                                string nmDisciplina = dados["nm_disciplina"].ToString();
+                                disciplina disciplina = new disciplina(nmDisciplina);
+                                tarefa tarefa = new tarefa(int.Parse(codigoTarefa), titulo, descricao, disciplina);
 
                                 string dtEntrega = dados["dt_entrega"].ToString();
                                 string hrEntrega = dados["hr_entrega"].ToString();

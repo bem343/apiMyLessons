@@ -62,7 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dlls\MySql.Data.dll" />
+    <Content Include="img\avatares\1.jpg" />
+    <Content Include="img\avatares\3.jpg" />
+    <Content Include="img\avatares\5.jpg" />
     <Content Include="img\avatares\6.jpg" />
+    <Content Include="img\avatares\8.jpg" />
     <Content Include="lib\buscarAvatares.aspx" />
     <Content Include="lib\buscarDadosAluno.aspx" />
     <Content Include="lib\buscarPremios.aspx" />
@@ -215,7 +219,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="img\temas\" />
+    <Folder Include="img\temas\1\" />
+    <Folder Include="img\temas\2\" />
+    <Folder Include="img\temas\3\" />
+    <Folder Include="img\temas\4\" />
+    <Folder Include="img\temas\5\" />
+    <Folder Include="img\temas\6\" />
+    <Folder Include="img\temas\7\" />
+    <Folder Include="img\temas\8\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

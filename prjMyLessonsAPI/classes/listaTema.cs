@@ -20,7 +20,7 @@ namespace prjMyLessonsAPI.classes
             }
         #endregion
 
-        #region Traz os avatares do banco
+        #region Traz os temas do banco
             public List<tema> todos()
             {
                 MySqlDataReader dados = null;

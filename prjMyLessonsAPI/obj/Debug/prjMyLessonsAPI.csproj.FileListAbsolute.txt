@@ -26,3 +26,13 @@ E:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.pdb
 E:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csprojResolveAssemblyReference.cache
 E:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.dll
 E:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.pdb
+J:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.dll
+J:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.pdb
+J:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csprojResolveAssemblyReference.cache
+J:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.dll
+J:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.pdb
+I:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.dll
+I:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\bin\prjMyLessonsAPI.pdb
+I:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.csprojResolveAssemblyReference.cache
+I:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.dll
+I:\TCC\prjMyLessonsAPI\prjMyLessonsAPI\obj\Debug\prjMyLessonsAPI.pdb

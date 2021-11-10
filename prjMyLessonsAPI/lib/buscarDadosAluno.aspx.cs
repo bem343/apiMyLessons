@@ -36,8 +36,8 @@ namespace prjMyLessonsAPI.lib
                     json = "[";
                     json += "{'nome':'" + aluno.nome + "', ";
                     json += "'qtEsmeraldas':'" + aluno.qtEsmeraldas + "', ";
-                    json += "'tema':'" + aluno.temaSelecionado.codigo + "', ";
-                    json += "'avatar':'" + aluno.avatarSelecionado.codigo + "'}";
+                    json += "'tema':'http://localhost:58591/img/temas/" + aluno.temaSelecionado.codigo + "/', ";
+                    json += "'avatar':'http://localhost:58591/img/avatares/" + aluno.avatarSelecionado.codigo + ".jpg'}";
                     json += "]";
                 }
                 json = json.Replace("'", "\"");

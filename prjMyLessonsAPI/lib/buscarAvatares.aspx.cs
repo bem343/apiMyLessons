@@ -43,7 +43,8 @@ namespace prjMyLessonsAPI.lib
                     {
                         json += "{'codigo':'" + item.avatar.codigo + "', ";
                         json += "'nome':'" + item.avatar.nome + "', ";
-                        json += "'raridade':'" + item.avatar.raridade + "'},";
+                        json += "'raridade':'" + item.avatar.raridade.codigo + "',";
+                        json += "'caminho':'http://localhost:58591/img/avatares/" + item.avatar.codigo + ".jpg'},";
                     }
                     json = json.Substring(0, json.Length - 1);
                     json += "]";

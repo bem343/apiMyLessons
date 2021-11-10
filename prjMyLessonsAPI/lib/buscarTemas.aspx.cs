@@ -42,7 +42,8 @@ namespace prjMyLessonsAPI.lib
                     foreach (var item in temas.doAluno())
                     {
                         json += "{'codigo':'" + item.tema.codigo + "', ";
-                        json += "'nome':'" + item.tema.nome + "'},";
+                        json += "'nome':'" + item.tema.nome + "',";
+                        json += "'caminho':'http://localhost:58591/img/temas/" + item.tema.codigo + "/'},";
                     }
                     json = json.Substring(0, json.Length - 1);
                     json += "]";

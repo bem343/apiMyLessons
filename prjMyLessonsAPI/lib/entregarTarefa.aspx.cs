@@ -89,8 +89,7 @@ namespace prjMyLessonsAPI.lib
                                     textoNivel += "'codigo':'" + escolhido.codigo + "', ";
                                     textoNivel += "'nome':'" + escolhido.nome + "', ";
                                     textoNivel += "'raridade':'" + escolhido.raridade.codigo + "', ";
-                                    textoNivel += "'pasta':'img/avatares/', ";
-                                    textoNivel += "'imagem':'" + escolhido.codigo + ".jpg'} ";
+                                    textoNivel += "'caminho':'http://localhost:58591/img/avatares/" + escolhido.codigo + ".jpg'}";
                                     break;
                                 case 1:
                                     //Tema
@@ -102,8 +101,7 @@ namespace prjMyLessonsAPI.lib
                                     textoNivel += "'codigo':'" + Tescolhido.codigo + "', ";
                                     textoNivel += "'nome':'" + Tescolhido.nome + "', ";
                                     textoNivel += "'raridade':'0', ";
-                                    textoNivel += "'pasta':'img/temas/', ";
-                                    textoNivel += "'imagem':'" + Tescolhido.codigo + ".jpg'} ";
+                                    textoNivel += "'caminho':'http://localhost:58591/img/temas/" + Tescolhido.codigo + "/'}";
                                     break;
                             }
 

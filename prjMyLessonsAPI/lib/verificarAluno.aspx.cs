@@ -47,9 +47,9 @@ namespace prjMyLessonsAPI.lib
                     if (aluno.dados())
                     {
                         json = "[";
-                        json += "{'nome':'" + aluno.nome + "',";
-                        json += "'qtEsmeraldas':'" + aluno.qtEsmeraldas + "',";
-                        json += "'tema':'http://localhost:58591/img/temas/" + aluno.temaSelecionado.codigo + ".jpg',";
+                        json += "{'nome':'" + aluno.nome + "', ";
+                        json += "'qtEsmeraldas':'" + aluno.qtEsmeraldas + "', ";
+                        json += "'tema':'http://localhost:58591/img/temas/" + aluno.temaSelecionado.codigo + "/', ";
                         json += "'avatar':'http://localhost:58591/img/avatares/" + aluno.avatarSelecionado.codigo + ".jpg'}";
                         json += "]";
                     }

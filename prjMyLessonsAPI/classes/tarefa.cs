@@ -19,11 +19,12 @@ namespace prjMyLessonsAPI.classes
         #endregion
 
         #region Construtores
-            public tarefa(int codigo, string titulo, string descricao)
+            public tarefa(int codigo, string titulo, string descricao, disciplina disciplina)
             {
                 this.codigo = codigo;
                 this.titulo = titulo;
                 this.descricao = descricao;
+                this.disciplina = disciplina;
             }
             public tarefa(int codigo)
             {

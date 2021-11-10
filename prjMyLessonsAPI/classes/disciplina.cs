@@ -18,6 +18,10 @@ namespace prjMyLessonsAPI.classes
             {
                 this.codigo = codigo;
             }
+            public disciplina(string nome)
+            {
+                this.nome = nome;
+            }
         #endregion
     }
 }

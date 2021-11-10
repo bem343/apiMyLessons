@@ -36,6 +36,7 @@ namespace prjMyLessonsAPI.lib
                 foreach (var item in tarefas.listarConcluidas())
                 {
                     json += "{'codigo':'" + item.tarefa.codigo + "', ";
+                    json += "'disciplina':'" + item.tarefa.disciplina.nome + "', ";
                     json += "'titulo':'" + item.tarefa.titulo + "', ";
                     json += "'descricao':'" + item.tarefa.descricao + "', ";
                     json += "'dtEntrega':'" + item.dtEntrega.ToShortDateString() + "', ";
