@@ -73,6 +73,12 @@
     <Content Include="img\avatares\8.jpg" />
     <Content Include="img\avatares\9.jpg" />
     <Content Include="img\avatares\7.jpg" />
+    <Content Include="img\temas\1\background.jpg" />
+    <Content Include="img\temas\1\header.jpg" />
+    <Content Include="img\temas\2\background.jpg" />
+    <Content Include="img\temas\2\header.jpg" />
+    <Content Include="img\temas\3\background.jpg" />
+    <Content Include="img\temas\3\header.jpg" />
     <Content Include="lib\buscarAvatares.aspx" />
     <Content Include="lib\buscarDadosAluno.aspx" />
     <Content Include="lib\buscarPremios.aspx" />
@@ -233,9 +239,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="img\temas\1\" />
-    <Folder Include="img\temas\2\" />
-    <Folder Include="img\temas\3\" />
     <Folder Include="img\temas\4\" />
     <Folder Include="img\temas\5\" />
     <Folder Include="img\temas\6\" />
