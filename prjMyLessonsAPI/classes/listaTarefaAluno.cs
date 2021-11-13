@@ -50,8 +50,40 @@ namespace prjMyLessonsAPI.classes
                                 DateTime hrI = DateTime.Parse(hrInicio);
                                 DateTime dtF = DateTime.Parse(dtFim);
                                 DateTime hrF = DateTime.Parse(hrFim);
-                                tarefaAluno tarefaAluno = new tarefaAluno(tarefa, dtI, hrI, dtF, hrF);
-                                tarefas.Add(tarefaAluno);
+
+                                TimeSpan d = dtF - DateTime.Today;
+                                TimeSpan t = hrF - DateTime.Now;
+                                bool atrazado = true;
+                                if (d.Days > 0)
+                                {
+                                    atrazado = false;
+                                }
+                                else
+                                {
+                                    if (t.Hours > 0)
+                                    {
+                                        atrazado = false;
+                                    }
+                                    else
+                                    {
+                                        if (t.Minutes > 0)
+                                        {
+                                            atrazado = false;
+                                        }
+                                        else
+                                        {
+                                            if (t.Seconds > 0)
+                                            {
+                                                atrazado = false;
+                                            }
+                                        }
+                                    }
+                                }
+                                if (!atrazado)
+                                {
+                                    tarefaAluno tarefaAluno = new tarefaAluno(tarefa, dtI, hrI, dtF, hrF);
+                                    tarefas.Add(tarefaAluno);
+                                }
                             }
                         }
                     }
