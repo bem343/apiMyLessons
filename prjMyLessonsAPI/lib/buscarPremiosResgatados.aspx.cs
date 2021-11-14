@@ -15,7 +15,6 @@ namespace prjMyLessonsAPI.lib
             string json = "[]";
 
             #region Faz as requisições e valida-as
-                Response.ContentType = "application/json";
                 if (Request["rm"] == null)
                 {
                     Response.Write(json);
@@ -31,7 +30,7 @@ namespace prjMyLessonsAPI.lib
 
             #region Busca os prêmios deste mês
                 aluno aluno = new aluno(int.Parse(rm));
-                listaPremio premios = new listaPremio(aluno);
+                listaPremioAluno premios = new listaPremioAluno(aluno);
                 json = "[ ";
                 foreach (var item in premios.listarResgatados())
                 {
@@ -39,33 +38,17 @@ namespace prjMyLessonsAPI.lib
                     json += "'nome':'" + item.premio.nome + "', ";
                     json += "'descricao':'" + item.premio.descricao + "', ";
                     json += "'retirado':'" + item.retirado + "', ";
-                    json += "'dtRetirado':'" + verificaData(item.dtRetirado) + "', ";
-                    json += "'hrRetirado':'" + verificaHora(item.hrRetirado) + "'},";
+                    json += "'dtRetirado':'" + verificar.data(item.dtRetirado) + "', ";
+                    json += "'hrRetirado':'" + verificar.hora(item.hrRetirado) + "'},";
                 }
                 json = json.Substring(0, json.Length - 1);
                 json = json.Replace("'", "\"");
                 json += "]";
                 Response.AppendHeader("Access-Control-Allow-Origin", "*");
+                Response.ContentType = "application/json";
                 Response.Write(json);
                 return;
             #endregion
         }
-
-        #region Verifica se a data ou hora ficaram zeradas e transforma em 'nada' caso ocorra
-            private string verificaData(DateTime DateTime)
-            {
-                if (DateTime.ToString() != "01/01/0001 00:00:00")
-                    return DateTime.ToShortDateString();
-                else
-                    return "";
-            }
-            private string verificaHora(DateTime DateTime)
-            {
-                if (DateTime.ToString() != "01/01/0001 00:00:00")
-                    return formatacao.hrDuasCasas(DateTime);
-                else
-                    return "";
-            }
-        #endregion
     }
 }

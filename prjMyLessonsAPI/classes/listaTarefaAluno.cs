@@ -53,33 +53,7 @@ namespace prjMyLessonsAPI.classes
 
                                 TimeSpan d = dtF - DateTime.Today;
                                 TimeSpan t = hrF - DateTime.Now;
-                                bool atrazado = true;
-                                if (d.Days > 0)
-                                {
-                                    atrazado = false;
-                                }
-                                else
-                                {
-                                    if (t.Hours > 0)
-                                    {
-                                        atrazado = false;
-                                    }
-                                    else
-                                    {
-                                        if (t.Minutes > 0)
-                                        {
-                                            atrazado = false;
-                                        }
-                                        else
-                                        {
-                                            if (t.Seconds > 0)
-                                            {
-                                                atrazado = false;
-                                            }
-                                        }
-                                    }
-                                }
-                                if (!atrazado)
+                                if (!atrazou(d, t))
                                 {
                                     tarefaAluno tarefaAluno = new tarefaAluno(tarefa, dtI, hrI, dtF, hrF);
                                     tarefas.Add(tarefaAluno);
@@ -159,6 +133,27 @@ namespace prjMyLessonsAPI.classes
                 fechaDados(dados);
                 fechaConexao();
                 return quantidade;
+            }
+        #endregion
+
+        #region Verifica se houve atrazo naquela tarefa
+            private bool atrazou(TimeSpan d, TimeSpan t)
+            {
+                if (d.Days > 0) { return false; }
+                if (d.Days < 0) { return true; }
+                return desempate(t);
+            }
+        #endregion
+
+        #region Desempata nas horas, minutos e segundos
+            private bool desempate(TimeSpan t)
+            {
+                if (t.Hours > 0) { return false; }
+                if (t.Hours < 0) { return true; }
+                if (t.Minutes > 0) { return false; }
+                if (t.Minutes < 0) { return true; }
+                if (t.Seconds > 0) { return false; }
+                else { return true; }
             }
         #endregion
 

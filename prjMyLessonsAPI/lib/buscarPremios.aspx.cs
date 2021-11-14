@@ -12,14 +12,30 @@ namespace prjMyLessonsAPI.lib
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.ContentType = "application/json";
+
+            string json = "[]";
+
+            #region Faz as requisições e valida-as
+                if (Request["rm"] == null)
+                {
+                    Response.Write(json);
+                    return;
+                }
+
+                if (Request["rm"].ToString() == "")
+                {
+                    Response.Write(json);
+                    return;
+                }
+                string rm = Request["rm"].ToString();
+            #endregion
 
             #region Busca os prêmios deste mês
                 int mesAtual = DateTime.Now.Month;
                 listaPremio premios = new listaPremio(mesAtual);
-                string json = "[ ";
+                json = "[ ";
 
-                foreach (var item in premios.listar())
+                foreach (var item in premios.listar(rm))
                 {
                     json += "{'codigo':'" + item.codigo + "', ";
                     json += "'nome':'" + item.nome + "', ";
@@ -32,9 +48,11 @@ namespace prjMyLessonsAPI.lib
                 json = json.Replace("'", "\"");
                 json += "]";
                 Response.AppendHeader("Access-Control-Allow-Origin", "*");
+                Response.ContentType = "application/json";
                 Response.Write(json);
                 return;
             #endregion
+
         }
     }
 }

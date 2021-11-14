@@ -93,6 +93,7 @@
     <Content Include="img\temas\3\icones\4.svg" />
     <Content Include="lib\buscarAvatares.aspx" />
     <Content Include="lib\buscarDadosAluno.aspx" />
+    <Content Include="lib\buscarPremio.aspx" />
     <Content Include="lib\buscarPremios.aspx" />
     <Content Include="lib\buscarPremiosResgatados.aspx" />
     <Content Include="lib\buscarTarefa.aspx" />
@@ -124,11 +125,11 @@
     <Compile Include="classes\disciplina.cs" />
     <Compile Include="classes\email.cs" />
     <Compile Include="classes\execucao.cs" />
-    <Compile Include="classes\formatacao.cs" />
     <Compile Include="classes\listaAvatar.cs" />
     <Compile Include="classes\listaAvatarAluno.cs" />
     <Compile Include="classes\listaConquista.cs" />
     <Compile Include="classes\listaConquistaAluno.cs" />
+    <Compile Include="classes\listaPremioAluno.cs" />
     <Compile Include="classes\listaTarefaAluno.cs" />
     <Compile Include="classes\listaTema.cs" />
     <Compile Include="classes\listaTemaAluno.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="classes\temaAluno.cs" />
     <Compile Include="classes\tipoConquista.cs" />
     <Compile Include="classes\turma.cs" />
+    <Compile Include="classes\verificar.cs" />
     <Compile Include="lib\buscarAvatares.aspx.cs">
       <DependentUpon>buscarAvatares.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,6 +157,13 @@
     </Compile>
     <Compile Include="lib\buscarDadosAluno.aspx.designer.cs">
       <DependentUpon>buscarDadosAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\buscarPremio.aspx.cs">
+      <DependentUpon>buscarPremio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\buscarPremio.aspx.designer.cs">
+      <DependentUpon>buscarPremio.aspx</DependentUpon>
     </Compile>
     <Compile Include="lib\buscarPremios.aspx.cs">
       <DependentUpon>buscarPremios.aspx</DependentUpon>

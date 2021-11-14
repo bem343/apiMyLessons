@@ -8,33 +8,34 @@ using prjMyLessonsAPI.classes;
 
 namespace prjMyLessonsAPI.lib
 {
-    public partial class buscarTarefa : System.Web.UI.Page
+    public partial class buscarPremio : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             string json = "[]";
 
             #region Faz as requisições e valida-as
-                if (Request["rm"] == null | Request["cdTarefa"] == null)
+                if (Request["rm"] == null | Request["cdPremio"] == null)
                 {
                     Response.Write(json);
                     return;
                 }
-                if (Request["rm"].ToString() == "" | Request["cdTarefa"].ToString() == "")
+                if (Request["rm"].ToString() == "" | Request["cdPremio"].ToString() == "")
                 {
                     Response.Write(json);
                     return;
                 }
+                string cdPremio = Request["cdPremio"].ToString();
                 string rm = Request["rm"].ToString();
-                string cdTarefa = Request["cdTarefa"].ToString();
             #endregion
 
-            #region Busca os dados de uma tarefa expecífica de um aluno expecífico
+            #region Busca os dados de um premio expecífico
                 aluno aluno = new aluno(int.Parse(rm));
-                tarefa tarefa = new tarefa(int.Parse(cdTarefa));
+                tarefa tarefa = new tarefa(int.Parse(cdPremio));
                 tarefaAluno tarefaAluno = new tarefaAluno(tarefa, aluno);
-                
-                if(tarefaAluno.dados())
+
+                if (tarefaAluno.dados())
                 {
                     json = "[";
                     json += "{'disciplina':'" + tarefaAluno.tarefa.disciplina.nome + "', ";
@@ -58,6 +59,7 @@ namespace prjMyLessonsAPI.lib
                 Response.Write(json);
                 return;
             #endregion
+
         }
 
     }

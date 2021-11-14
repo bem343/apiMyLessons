@@ -12,10 +12,10 @@ namespace prjMyLessonsAPI.lib
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             string json = "[]";
 
             #region Faz as requisições e valida-as
-                Response.ContentType = "application/json";
                 if (Request["rm"] == null)
                 {
                     Response.Write(json);
@@ -36,7 +36,7 @@ namespace prjMyLessonsAPI.lib
                     listaAvatarAluno avatares = new listaAvatarAluno(aluno);
                     json = "[";
                     json += "{'nivel':'" + aluno.nivel + "', ";
-                    json += "'porcentagem':'" + fazPorcentagem(aluno.qtExperiencia, aluno.nivel) + "', ";
+                    json += "'porcentagem':'" + verificar.porcentagem(aluno.qtExperiencia, aluno.nivel) + "', ";
                     json += "'qtTotalAvatares':'" + avatares.quantidadeTotal() + "'}, ";
                     json += "[";
                     foreach (var item in avatares.doAluno())
@@ -52,21 +52,11 @@ namespace prjMyLessonsAPI.lib
                 }
                 json = json.Replace("'", "\"");
                 Response.AppendHeader("Access-Control-Allow-Origin", "*");
+                Response.ContentType = "application/json";
                 Response.Write(json);
                 return;
             #endregion
         }
 
-        #region Verifica se a conta deu vai ficar fazia, para então substituir por zero
-            private string fazPorcentagem(double quebrado, int inteiro)
-            {
-                string porcentagem = ((quebrado - inteiro) * 100).ToString("##");
-                if(porcentagem == "")
-                {
-                    return "0";
-                }
-                return porcentagem;
-            }
-        #endregion
     }
 }

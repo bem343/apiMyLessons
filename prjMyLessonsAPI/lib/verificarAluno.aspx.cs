@@ -16,11 +16,9 @@ namespace prjMyLessonsAPI.lib
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            Response.ContentType = "application/json";
             string json = "[]";
 
             #region Faz as requisições e valida-as
-
                 if (Request["rm"] == null | Request["senha"] == null)
                 {
                     Response.Write(json);
@@ -35,11 +33,9 @@ namespace prjMyLessonsAPI.lib
 
                 string rm = Request["rm"].ToString();
                 string senha = Request["senha"].ToString();
-
             #endregion
 
             #region Verifica se o aluno existe apartir do rm e senha
-
                 aluno aluno = new aluno(int.Parse(rm), senha);
 
                 if (aluno.verificarAluno())
@@ -57,9 +53,9 @@ namespace prjMyLessonsAPI.lib
 
                 json = json.Replace("'", "\"");
                 Response.AppendHeader("Access-Control-Allow-Origin", "*");
+                Response.ContentType = "application/json";
                 Response.Write(json);
                 return;
-
             #endregion
 
         }

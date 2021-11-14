@@ -12,6 +12,7 @@ namespace prjMyLessonsAPI.lib
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             string json = "[]";
 
             #region Faz as requisições e valida-as
@@ -65,7 +66,7 @@ namespace prjMyLessonsAPI.lib
                         if(nivelAtual != nivelObtido)
                         {
                             int nivel = aluno.nivel;
-                            textoNivel = "{'nivel':'" + nivel + "', 'porcentagem':'" + fazPorcentagem(aluno.qtExperiencia, nivel) + "'}, ";
+                            textoNivel = "{'nivel':'" + nivel + "', 'porcentagem':'" + verificar.porcentagem(aluno.qtExperiencia, nivel) + "'}, ";
 
                             Random n = new Random();
                             switch (n.Next(2))
@@ -118,16 +119,5 @@ namespace prjMyLessonsAPI.lib
             #endregion
         }
 
-        #region Verifica se a conta deu vai ficar fazia, para então substituir por zero
-            private string fazPorcentagem(double quebrado, int inteiro)
-            {
-                string porcentagem = ((quebrado - inteiro) * 100).ToString("##");
-                if (porcentagem == "")
-                {
-                    return "0";
-                }
-                return porcentagem;
-            }
-        #endregion
     }
 }

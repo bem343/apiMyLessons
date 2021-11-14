@@ -15,7 +15,6 @@ namespace prjMyLessonsAPI.lib
             string json = "[]";
 
             #region Faz as requisições e valida-as
-                Response.ContentType = "application/json";
                 if (Request["rm"] == null | Request["cdPremio"] == null)
                 {
                     Response.Write(json);
@@ -37,6 +36,7 @@ namespace prjMyLessonsAPI.lib
                 json = "[{'success' : '" + premioAluno.resgatar().ToString() + "'}]";   
                 json = json.Replace("'", "\"");
                 Response.AppendHeader("Access-Control-Allow-Origin", "*");
+                Response.ContentType = "application/json";
                 Response.Write(json);
                 return;
             #endregion
