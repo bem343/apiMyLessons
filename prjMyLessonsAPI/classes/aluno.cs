@@ -98,7 +98,7 @@ namespace prjMyLessonsAPI.classes
         #endregion
 
         #region Redefinir senha
-            public bool redefinirSenha()
+            public bool redefinirSenha(string senha)
             {
                 string nomeSP = "redefinirSenhaAluno";
                 string[,] parametros = new string[2, 2];

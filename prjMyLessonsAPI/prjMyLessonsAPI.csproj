@@ -105,6 +105,7 @@
     <Content Include="lib\redefinirSenha.aspx" />
     <Content Include="lib\resgatarPremio.aspx" />
     <Content Include="lib\trocarAvatarAluno.aspx" />
+    <Content Include="lib\trocarSenha.aspx" />
     <Content Include="lib\trocarTemaAluno.aspx" />
     <Content Include="lib\verificarAluno.aspx" />
     <Content Include="Web.config" />
@@ -242,6 +243,13 @@
     </Compile>
     <Compile Include="lib\trocarAvatarAluno.aspx.designer.cs">
       <DependentUpon>trocarAvatarAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\trocarSenha.aspx.cs">
+      <DependentUpon>trocarSenha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\trocarSenha.aspx.designer.cs">
+      <DependentUpon>trocarSenha.aspx</DependentUpon>
     </Compile>
     <Compile Include="lib\trocarTemaAluno.aspx.cs">
       <DependentUpon>trocarTemaAluno.aspx</DependentUpon>
