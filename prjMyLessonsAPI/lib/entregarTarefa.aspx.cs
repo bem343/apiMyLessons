@@ -14,6 +14,8 @@ namespace prjMyLessonsAPI.lib
         {
 
             string json = "[]";
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
+            Response.ContentType = "application/json";
 
             #region Faz as requisições e valida-as
                 if (Request["rm"] == null | Request["cdTarefa"] == null | Request["exp"] == null | Request["esm"] == null)
@@ -112,11 +114,10 @@ namespace prjMyLessonsAPI.lib
                 json += "[" + conquistasDesbloqueadas + "]";
                 json += "]";
                 json = json.Replace("'", "\"");
-                Response.AppendHeader("Access-Control-Allow-Origin", "*");
-                Response.ContentType = "application/json";
                 Response.Write(json);
                 return;
             #endregion
+
         }
 
     }

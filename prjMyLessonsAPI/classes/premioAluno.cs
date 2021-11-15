@@ -46,5 +46,55 @@ namespace prjMyLessonsAPI.classes
             }
         #endregion
 
+        #region Busca os dados de um prêmio expecífico de um aluno
+            public bool dados()
+            {
+                MySqlDataReader dados = null;
+                string nomeSP = "buscarPremio";
+                string[,] parametros = new string[2, 2];
+                parametros[0, 0] = "vRm";
+                parametros[0, 1] = aluno.rm.ToString();
+                parametros[1, 0] = "vCd";
+                parametros[1, 1] = premio.codigo.ToString();
+                if (Selecionar(nomeSP, parametros, ref dados))
+                {
+                    if (dados != null)
+                    {
+                        if (dados.HasRows)
+                        {
+                            while (dados.Read())
+                            {
+
+                                premio.nome = dados["nm_premio_escolar"].ToString();
+                                premio.descricao = dados["ds_premio_escolar"].ToString();
+                                string sQtEsmeralda = dados["qt_esmeralda"].ToString();
+                                string sQtPremio = dados["qt_premio_escolar"].ToString();
+                                string sData = dados["data"].ToString();
+
+                                string sRetirado = dados["ic_retirado"].ToString();
+                                retirado = bool.Parse(sRetirado);
+
+                                string sDtRetirada = dados["dt_retirada"].ToString();
+                                string sHrRetirada = dados["hr_retirada"].ToString();
+                                if (sDtRetirada != "") { dtRetirado = DateTime.Parse(sDtRetirada); }
+                                if (sHrRetirada != "") { hrRetirado = DateTime.Parse(sHrRetirada); }
+
+                                premio.qtEsmeralda = int.Parse(sQtEsmeralda);
+                                premio.qtPremio = int.Parse(sQtPremio);
+                                premio.dtFinal = DateTime.Parse(sData);
+
+                            }
+                            fechaDados(dados);
+                            fechaConexao();
+                            return true;
+                        }
+                    }
+                }
+                fechaDados(dados);
+                fechaConexao();
+                return false;
+            }
+        #endregion
+
     }
 }

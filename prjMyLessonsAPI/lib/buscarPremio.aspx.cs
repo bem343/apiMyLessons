@@ -14,6 +14,8 @@ namespace prjMyLessonsAPI.lib
         {
 
             string json = "[]";
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
+            Response.ContentType = "application/json";
 
             #region Faz as requisições e valida-as
                 if (Request["rm"] == null | Request["cdPremio"] == null)
@@ -32,30 +34,24 @@ namespace prjMyLessonsAPI.lib
 
             #region Busca os dados de um premio expecífico
                 aluno aluno = new aluno(int.Parse(rm));
-                tarefa tarefa = new tarefa(int.Parse(cdPremio));
-                tarefaAluno tarefaAluno = new tarefaAluno(tarefa, aluno);
+                premio premio = new premio(int.Parse(cdPremio));
+                premioAluno premioAluno = new premioAluno(premio, aluno);
 
-                if (tarefaAluno.dados())
+                if (premioAluno.dados())
                 {
                     json = "[";
-                    json += "{'disciplina':'" + tarefaAluno.tarefa.disciplina.nome + "', ";
-                    json += "'titulo':'" + tarefaAluno.tarefa.titulo + "', ";
-                    json += "'descricao':'" + tarefaAluno.tarefa.descricao + "', ";
-                    json += "'dtInicio':'" + tarefaAluno.dtInicio.ToShortDateString() + "', ";
-                    json += "'hrInicio':'" + tarefaAluno.hrInicio.ToLongTimeString() + "', ";
-                    json += "'dtFim':'" + tarefaAluno.dtFim.ToShortDateString() + "', ";
-                    json += "'hrFim':'" + tarefaAluno.hrFim.ToLongTimeString() + "', ";
-                    json += "'entregue':'" + tarefaAluno.entregue + "', ";
-                    json += "'dtEntrega':'" + verificar.data(tarefaAluno.dtEntrega) + "', ";
-                    json += "'hrEntrega':'" + verificar.hora(tarefaAluno.hrEntrega) + "', ";
-                    json += "'mencao':'" + tarefaAluno.mencao + "', ";
-                    json += "'devolucao':'" + tarefaAluno.devolucaoProfessor + "'}";
+                    json += "{'nome':'" + premioAluno.premio.nome + "', ";
+                    json += "'descricao':'" + premioAluno.premio.descricao + "', ";
+                    json += "'qtEsmeralda':'" + premioAluno.premio.qtEsmeralda + "', ";
+                    json += "'qtPremio':'" + premioAluno.premio.qtPremio + "', ";
+                    json += "'dtFinal':'" + premioAluno.premio.dtFinal.ToShortDateString() + "', ";
+                    json += "'retirado':'" + premioAluno.retirado + "', ";
+                    json += "'dtRetirado':'" + verificar.data(premioAluno.dtRetirado) + "', ";
+                    json += "'hrRetirado':'" + verificar.hora(premioAluno.hrRetirado) + "'}";
                     json += "]";
                 }
 
                 json = json.Replace("'", "\"");
-                Response.AppendHeader("Access-Control-Allow-Origin", "*");
-                Response.ContentType = "application/json";
                 Response.Write(json);
                 return;
             #endregion

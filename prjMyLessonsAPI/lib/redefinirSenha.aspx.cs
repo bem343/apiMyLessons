@@ -12,7 +12,10 @@ namespace prjMyLessonsAPI.lib
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             string json = "[]";
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
+            Response.ContentType = "application/json";
 
             #region Faz as requisições e valida-as
                 if (Request["rm"] == null | Request["senha"] == null)
@@ -33,11 +36,10 @@ namespace prjMyLessonsAPI.lib
                 aluno aluno = new aluno(int.Parse(rm));
                 json = "[{'success' : '" + aluno.redefinirSenha(senha) + "'}]";
                 json = json.Replace("'", "\"");
-                Response.AppendHeader("Access-Control-Allow-Origin", "*");
-                Response.ContentType = "application/json";
                 Response.Write(json);
                 return;
             #endregion
+
         }
     }
 }

@@ -14,6 +14,8 @@ namespace prjMyLessonsAPI.lib
         {
 
             string json = "[]";
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
+            Response.ContentType = "application/json";
 
             #region Faz as requisições e valida-as
                 if (Request["rm"] == null | Request["senhaAtual"] == null | Request["novaSenha"] == null)
@@ -36,8 +38,6 @@ namespace prjMyLessonsAPI.lib
                 if (aluno.verificarAluno()) { json = "[{'success' : '" + aluno.redefinirSenha(novaSenha) + "'}]"; }
                 else { json = "[{'success' : 'false'}]"; }
                 json = json.Replace("'", "\"");
-                Response.AppendHeader("Access-Control-Allow-Origin", "*");
-                Response.ContentType = "application/json";
                 Response.Write(json);
                 return;
             #endregion
