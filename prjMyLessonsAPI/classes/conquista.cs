@@ -23,14 +23,6 @@ namespace prjMyLessonsAPI.classes
             {
                 this.codigo = codigo;
             }
-            public conquista(int codigo, string nome, string descricao, int qtExperiencia, int qtObjetivo)
-            {
-                this.codigo = codigo;
-                this.nome = nome;
-                this.descricao = descricao;
-                this.qtExperiencia = qtExperiencia;
-                this.qtObjetivo = qtObjetivo;
-            }
             public conquista(int codigo, string nome, string descricao, int qtExperiencia, int qtObjetivo, tipoConquista tipoConquista)
             {
                 this.codigo = codigo;

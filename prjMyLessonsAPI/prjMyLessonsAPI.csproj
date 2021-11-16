@@ -92,6 +92,8 @@
     <Content Include="img\temas\3\icones\3.svg" />
     <Content Include="img\temas\3\icones\4.svg" />
     <Content Include="lib\buscarAvatares.aspx" />
+    <Content Include="lib\buscarConquistasBloqueadas.aspx" />
+    <Content Include="lib\buscarConquistasDesbloqueadas.aspx" />
     <Content Include="lib\buscarDadosAluno.aspx" />
     <Content Include="lib\buscarPremio.aspx" />
     <Content Include="lib\buscarPremios.aspx" />
@@ -151,6 +153,20 @@
     </Compile>
     <Compile Include="lib\buscarAvatares.aspx.designer.cs">
       <DependentUpon>buscarAvatares.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\buscarConquistasBloqueadas.aspx.cs">
+      <DependentUpon>buscarConquistasBloqueadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\buscarConquistasBloqueadas.aspx.designer.cs">
+      <DependentUpon>buscarConquistasBloqueadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\buscarConquistasDesbloqueadas.aspx.cs">
+      <DependentUpon>buscarConquistasDesbloqueadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\buscarConquistasDesbloqueadas.aspx.designer.cs">
+      <DependentUpon>buscarConquistasDesbloqueadas.aspx</DependentUpon>
     </Compile>
     <Compile Include="lib\buscarDadosAluno.aspx.cs">
       <DependentUpon>buscarDadosAluno.aspx</DependentUpon>
