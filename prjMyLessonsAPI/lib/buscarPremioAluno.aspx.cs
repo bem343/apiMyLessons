@@ -8,7 +8,7 @@ using prjMyLessonsAPI.classes;
 
 namespace prjMyLessonsAPI.lib
 {
-    public partial class buscarPremio1 : System.Web.UI.Page
+    public partial class buscarPremio : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,19 +29,25 @@ namespace prjMyLessonsAPI.lib
                     return;
                 }
                 string cdPremio = Request["cdPremio"].ToString();
+                string rm = Request["rm"].ToString();
             #endregion
 
             #region Busca os dados de um premio expecífico
+                aluno aluno = new aluno(int.Parse(rm));
                 premio premio = new premio(int.Parse(cdPremio));
+                premioAluno premioAluno = new premioAluno(premio, aluno);
 
-                if (premio.dados())
+                if (premioAluno.dados())
                 {
                     json = "[";
-                    json += "{'nome':'" + premio.nome + "', ";
-                    json += "'descricao':'" + premio.descricao + "', ";
-                    json += "'qtEsmeralda':'" + premio.qtEsmeralda + "', ";
-                    json += "'qtPremio':'" + premio.qtPremio + "', ";
-                    json += "'dtFinal':'" + premio.dtFinal.ToShortDateString() + "'}";
+                    json += "{'nome':'" + premioAluno.premio.nome + "', ";
+                    json += "'descricao':'" + premioAluno.premio.descricao + "', ";
+                    json += "'qtEsmeralda':'" + premioAluno.premio.qtEsmeralda + "', ";
+                    json += "'qtPremio':'" + premioAluno.premio.qtPremio + "', ";
+                    json += "'dtFinal':'" + premioAluno.premio.dtFinal.ToShortDateString() + "', ";
+                    json += "'retirado':'" + premioAluno.retirado + "', ";
+                    json += "'dtRetirado':'" + verificar.data(premioAluno.dtRetirado) + "', ";
+                    json += "'hrRetirado':'" + verificar.hora(premioAluno.hrRetirado) + "'}";
                     json += "]";
                 }
 
@@ -51,5 +57,6 @@ namespace prjMyLessonsAPI.lib
             #endregion
 
         }
+
     }
 }

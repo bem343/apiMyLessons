@@ -10,6 +10,6 @@
 namespace prjMyLessonsAPI.lib {
     
     
-    public partial class buscarPremio1 {
+    public partial class buscarPremio {
     }
 }

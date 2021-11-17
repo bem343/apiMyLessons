@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="buscarPremioAluno.aspx.cs" Inherits="prjMyLessonsAPI.lib.buscarPremio" %>

@@ -96,6 +96,7 @@
     <Content Include="lib\buscarConquistasDesbloqueadas.aspx" />
     <Content Include="lib\buscarDadosAluno.aspx" />
     <Content Include="lib\buscarPremio.aspx" />
+    <Content Include="lib\buscarPremioAluno.aspx" />
     <Content Include="lib\buscarPremios.aspx" />
     <Content Include="lib\buscarPremiosResgatados.aspx" />
     <Content Include="lib\buscarTarefa.aspx" />
@@ -181,6 +182,13 @@
     </Compile>
     <Compile Include="lib\buscarPremio.aspx.designer.cs">
       <DependentUpon>buscarPremio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lib\buscarPremioAluno.aspx.cs">
+      <DependentUpon>buscarPremioAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lib\buscarPremioAluno.aspx.designer.cs">
+      <DependentUpon>buscarPremioAluno.aspx</DependentUpon>
     </Compile>
     <Compile Include="lib\buscarPremios.aspx.cs">
       <DependentUpon>buscarPremios.aspx</DependentUpon>
