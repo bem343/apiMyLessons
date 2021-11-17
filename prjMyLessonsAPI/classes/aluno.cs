@@ -129,9 +129,10 @@ namespace prjMyLessonsAPI.classes
                             {
                                 nome = dados["nm_aluno"].ToString();
                                 qtEsmeraldas = int.Parse(dados["qt_esmeralda"].ToString());
+                                int tipoTema = int.Parse(dados["cd_tipo_tema"].ToString());
                                 string tema = dados["cd_tema"].ToString();
                                 string avatar = dados["cd_avatar"].ToString();
-                                temaSelecionado = new tema(int.Parse(tema));
+                                temaSelecionado = new tema(int.Parse(tema), new tipoTema(tipoTema));
                                 avatarSelecionado = new avatar(int.Parse(avatar));
                             }
                             fechaDados(dados);

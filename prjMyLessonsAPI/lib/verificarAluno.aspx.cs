@@ -47,6 +47,17 @@ namespace prjMyLessonsAPI.lib
                         json = "[";
                         json += "{'nome':'" + aluno.nome + "', ";
                         json += "'qtEsmeraldas':'" + aluno.qtEsmeraldas + "', ";
+
+                        switch (aluno.temaSelecionado.tipo.codigo)
+                        {
+                            case 1:
+                                json += "'tipoTema':'.jpg', ";
+                                break;
+                            case 2:
+                                json += "'tipoTema':'.gif', ";
+                                break;
+                        }
+
                         json += "'tema':'http://localhost:58591/img/temas/" + aluno.temaSelecionado.codigo + "/', ";
                         json += "'avatar':'http://localhost:58591/img/avatares/" + aluno.avatarSelecionado.codigo + ".jpg'}";
                         json += "]";
